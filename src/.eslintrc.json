@@ -1,0 +1,66 @@
+{
+    "extends": "react-app",
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "ignoredNodes": [
+                    "TemplateLiteral *"
+                ]
+            }
+        ],
+        "function-paren-newline": "off",
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "array-bracket-newline": [
+            "error",
+            {
+                "minItems": 1
+            }
+        ],
+        "react/prop-types": [
+            2
+        ],
+        "react/jsx-one-expression-per-line": "error",
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
+            1,
+            4
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "jsx-a11y/aria-role": [
+            2,
+            {
+                "ignoreNonDOM": true
+            }
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "args": "none",
+                "varsIgnorePattern": "^_"
+            }
+        ]
+    }
+}
