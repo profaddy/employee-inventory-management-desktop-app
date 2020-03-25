@@ -1,7 +1,7 @@
-const formatResponse = (status = false,message ="",data={}) => {
+const formatResponse = (status = false, message = "", data = {}) => {
     return {
-        status:status,
-        message:message,
+        status: status,
+        message: message,
         ...data
     }
 }

@@ -24,6 +24,13 @@ const styles = () => ({
     flex3: {
         flex: 3
     },
+    editFieldWrap:{
+        display:"flex"
+    },
+    editFlexItem:{
+        marginRight:10,
+        width:200
+    },
     label: {
         fontSize: 12,
         paddingBottom: 5,

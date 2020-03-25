@@ -1,9 +1,13 @@
 export const customValidator = {
-    isNumber: portNumber => {
-        if (!portNumber) {
+    isPositiveNumber: value => {
+        if (!value && value !== 0) {
             return "Required!";
-        } else if (isNaN(Number(portNumber))) {
-            return "Port number should be between 1024 and 65535";
+        } else if (isNaN(value)) {
+            return "Value must be a number";
+        } else if (!(Number.isInteger(Number(value)))){
+            return "value must be non-negative integer"
+        }else if(Number(value) < 0){
+            return "value cannot be negative"
         }
     },
 

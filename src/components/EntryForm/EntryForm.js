@@ -8,18 +8,18 @@ import moment from "moment";
 import SelectComponent from "../../components/SelectComponent/SelectComponent";
 import InputField from "../../components/InputField/InputField";
 import ToggleComponent from "../../components/ToggleComponent/ToggleComponent";
-import pick from "lodash/pick";
 
 const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode, selectedEntry, updateEntry }) => {
     const [
         initialValues, setCount
     ] = useState({
-        entry_type: "taken"
+        entry_type: "taken",
+        entry_mode:entryMode
     });
-    const [date,setDate] = useState(new Date())
+    const [date,setDate] = useState(entryMode === "edit" ? selectedEntry.created_at : new Date())
     const onChange = (date) => setDate(date);
     const submitButtonText = entryMode === "edit" ? "Update" : "Create";
-    const CombinedInitialValues = entryMode === "add" ? { ...initialValues } : { ...initialValues, ...selectedEntry };
+    const CombinedInitialValues = entryMode === "add" ? { ...initialValues } : { ...initialValues, ...selectedEntry  };
     return (
         <>
             <div className={classes.container}>
@@ -27,11 +27,12 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                     <Form
                         onSubmit={(values) => {
                             if (entryMode === "edit") {
-                                const payload = pick(values, "_id", "user_id", "product_id", "entry_type", "entry_value");
-                                updateEntry(payload);
+                                const created_at = moment(date).format("DD-MM-YYYY")
+                                // const payload = pick(values, "_id", "user_id", "product_id", "entry_type", "entry_value");
+                                updateEntry({...values,entry_mode:"edit",created_at});
                             } else {
                                 const created_at = moment(date).format("DD-MM-YYYY")
-                                addEntry({...values,created_at});
+                                addEntry({...values,created_at,entry_mode:"add"});
                             }
                         }}
                         initialValues={CombinedInitialValues}
@@ -73,15 +74,19 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                     </span>
                                                 )} />
                                         </div>
-                                        <div style={{ width: 200 }}>
-                                            <Field
-                                                type={"text"}
-                                                label={"Select Quantity"}
-                                                name={"entry_value"}
-                                                component={InputField}
-                                                fullWidth={false}
-                                            />
-                                        </div>
+
+                                        {entryMode === "add" && 
+                                        <>
+                                            <div style={{ width: 200 }}>
+                                                <Field
+                                                    type={"number"}
+                                                    label={"Select Quantity"}
+                                                    name={"entry_value"}
+                                                    component={InputField}
+                                                    fullWidth={false}
+                                                    parse={(value) => Number(value)}
+                                                />
+                                            </div>
                                         <div className={classes.installTypeFieldWrap}>
                                             <div className={classes.label}>
                                                 Entry Type
@@ -103,7 +108,40 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                 width={150}
                                                 component={ToggleComponent}
                                             />
+                                        </div></>}
+                                        {entryMode === "edit" && 
+                                        <div className={classes.editFieldWrap}>
+                                            <div className={classes.editFlexItem}>
+                                                <Field
+                                                    type={"number"}
+                                                    label={"Taken Quantity"}
+                                                    name={"taken"}
+                                                    component={InputField}
+                                                    fullWidth={false}
+                                                    parse={(value) => Number(value)}
+                                                />
                                         </div>
+                                        <div className={classes.editFlexItem}>
+                                                <Field
+                                                    type={"number"}
+                                                    label={"consumed Quantity"}
+                                                    name={"consumed"}
+                                                    component={InputField}
+                                                    fullWidth={false}
+                                                    parse={(value) => Number(value)}
+                                                />
+                                        </div>
+                                        <div className={classes.editFlexItem}>
+                                                <Field
+                                                    type={"number"}
+                                                    label={"Returned Quantity"}
+                                                    name={"returned"}
+                                                    component={InputField}
+                                                    fullWidth={false}
+                                                    parse={(value) => Number(value)}
+                                                />
+                                        </div>
+                                        </div>}
                                         <div>
                                         </div>
                                     </div>
