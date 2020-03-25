@@ -3,7 +3,7 @@ var Service = require('node-windows').Service;
 // Create a new service object
 var svc = new Service({
   name:'inventory-node-server',
-  script: "E:\\inventory-management\\server\\server.js"
+  script: ".\\server.js"
 });
  
 // Listen for the "uninstall" event so we know when it's done.
