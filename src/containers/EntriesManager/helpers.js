@@ -1,5 +1,5 @@
 export const options = {
-    filterType: "dropdown",
+    filterType: "multiselect",
     responsive: "scroll",
     rowsPerPage: 50,
     selectableRowsHeader: false,

@@ -13,6 +13,7 @@ const entriesSchema = mongoose.Schema({
     returned: Number,
     remaining: Number,
     created_date: Date,
+    created_at:Date,
     created_timestamp: Number
 })
 

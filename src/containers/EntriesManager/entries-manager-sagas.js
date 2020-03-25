@@ -45,7 +45,7 @@ function* fetchEntriesSaga(action) {
         const { data } = yield call(fetchEntries);
         const { entries } = data;
         const formattedEntries = entries.reduce((acc, item) => {
-            const created_at = moment.utc(item.created_date, "YYYY-MM-DDThh:mm:ss.sssZ").local().format("DD-MM-YYYY");
+            const created_at = moment.utc(item.created_at, "YYYY-MM-DDThh:mm:ss.sssZ").local().format("DD-MM-YYYY");
             const entry = [
                 created_at,
                 item.product_name,

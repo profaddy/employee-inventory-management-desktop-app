@@ -3,6 +3,8 @@ import { Form, Field } from "react-final-form";
 import { Divider, Button, withStyles } from "@material-ui/core";
 import styles from "./styles";
 import { validator } from "./validator";
+import DatePicker from 'react-date-picker';
+import moment from "moment";
 import SelectComponent from "../../components/SelectComponent/SelectComponent";
 import InputField from "../../components/InputField/InputField";
 import ToggleComponent from "../../components/ToggleComponent/ToggleComponent";
@@ -14,6 +16,8 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
     ] = useState({
         entry_type: "taken"
     });
+    const [date,setDate] = useState(new Date())
+    const onChange = (date) => setDate(date);
     const submitButtonText = entryMode === "edit" ? "Update" : "Create";
     const CombinedInitialValues = entryMode === "add" ? { ...initialValues } : { ...initialValues, ...selectedEntry };
     return (
@@ -26,7 +30,8 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                 const payload = pick(values, "_id", "user_id", "product_id", "entry_type", "entry_value");
                                 updateEntry(payload);
                             } else {
-                                addEntry(values);
+                                const created_at = moment(date).format("DD-MM-YYYY")
+                                addEntry({...values,created_at});
                             }
                         }}
                         initialValues={CombinedInitialValues}
@@ -102,7 +107,20 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                         <div>
                                         </div>
                                     </div>
-                                    <div className={classes.flex1}></div>
+                                    <div className={classes.flex1}>
+                                    <div>
+                                        {/* <Field
+                                        name={"date"}
+                                        value={date}
+                                        component={}
+                                        > */}
+        <DatePicker
+          onChange={onChange}
+          value={date}
+        />
+        {/* </Field> */}
+      </div>
+                                    </div>
                                 </div>
                             </form>
                         )}

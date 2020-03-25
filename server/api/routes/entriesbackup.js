@@ -17,21 +17,17 @@ getBagValue = (payload, currentBagValue) => {
         let consumed = 0;
         let returned = 0;
         if (payload.entry_type === "taken") {
-            remaining = Number(currentBagValue) + Number(payload.taken) + Number(payload.entry_value) - Number(payload.consumed) - Number(payload.returned);
-            // remaining = Number(currentBagValue) + Number(payload.entry_value)
+            remaining = Number(currentBagValue) + Number(payload.entry_value);
             taken = Number(payload.taken) + Number(payload.entry_value);
             consumed = Number(payload.consumed);
             returned = Number(payload.returned);
         } else if (payload.entry_type === "consumed") {
-            // remaining = Number(currentBagValue) - Number(payload.entry_value);
-            remaining = Number(currentBagValue) + Number(payload.taken) - (Number(payload.consumed) + Number(payload.entry_value)) - Number(payload.returned);
-
+            remaining = Number(currentBagValue) - Number(payload.entry_value);
             consumed = Number(payload.consumed) + Number(payload.entry_value);
             taken = Number(payload.taken);
             returned = Number(payload.returned);
         } else if (payload.entry_type === "returned") {
-            // remaining = Number(currentBagValue) - Number(payload.entry_value);
-            remaining = Number(currentBagValue) + Number(payload.taken) - Number(payload.consumed) - (Number(payload.entry_value) + Number(payload.returned));
+            remaining = Number(currentBagValue) - Number(payload.entry_value);
             returned = Number(payload.returned) + Number(payload.entry_value);
             taken = Number(payload.taken);
             consumed = Number(payload.consumed);
@@ -52,31 +48,6 @@ getBagValue = (payload, currentBagValue) => {
     }
 }
 
-getEditBagValue = (payload, currentBagValue) => {
-    try {
-        console.log(payload, currentBagValue);
-        let remaining = 0;
-        let taken = 0;
-        let consumed = 0;
-        let returned = 0;
-            remaining = Number(currentBagValue) + Number(payload.taken) - Number(payload.consumed) - Number(payload.returned);
-            // remaining = Number(currentBagValue) + Number(payload.entry_value)
-            taken = Number(payload.taken)
-            consumed = Number(payload.consumed);
-            returned = Number(payload.returned);
-        if (remaining < 0) {
-            throw ("problem while calculating remaining value")
-        }
-        return {
-            remaining: remaining,
-            consumed: consumed,
-            taken: taken,
-            returned: returned
-        }
-    } catch (error) {
-        throw (`${error}`)
-    }
-}
 const addEntry = async (payload, res, next) => {
     try {
         let remaining = 0;
@@ -114,7 +85,7 @@ const addEntry = async (payload, res, next) => {
 
 router.get(("/"), async (req, res, next) => {
     try {
-        const entries = await Entry.find({ product_name: "i7", user_name: "a7" }).sort({ created_at: 'asc' }).exec();
+        const entries = await Entry.find({ product_name: "p4", user_name: "t2" }).sort({ created_at: 'asc' }).exec();
         res.status(200).json(formatResponse(true, "entries retrieved successfully", { entries: entries }));
     } catch (error) {
         res.status(500).json(formatResponse(false, `error occured while retrieving entries: ${error}`))
@@ -134,6 +105,7 @@ router.get(("/:id"), async (req, res, next) => {
 router.post(("/"), async (req, res, next) => {
     try {
         // console.log(moment(req.body.created_at,"DD-MM-YYYY").utc().toISOString())
+        let entryPayload = {}
         const payload = req.body;
         let currentEntry = await Entry.findOne({
             user_id: payload.user_id,
@@ -146,18 +118,29 @@ router.post(("/"), async (req, res, next) => {
             product_id: payload.product_id,
             created_at: { $gt: moment(payload.created_at, "DD-MM-YYYY").utc().toISOString() }
         })
+
+        let previousEntries = await Entry.find({
+            user_id: payload.user_id,
+            product_id: payload.product_id,
+            created_at: { $lt: moment(payload.created_at, "DD-MM-YYYY").utc().toISOString() }
+        }).sort({ created_at: "asc" }).exec();
+
         let prevBagValue = null;
-        let entryPayload = {}
-        let isFutureEntriesPresent = !(isEmpty(futureEntries));
-        let isCurrentEntryPresent = !(isEmpty(currentEntry));
-        console.log(isCurrentEntryPresent,"present");
-        if (isCurrentEntryPresent) {
+        if (!(isEmpty(futureEntries))) {
+            let stock = await Stock.find({ user_id: payload.user_id, product_id: payload.product_id });
+            stock.bag_value = previousEntries.slice(-1)[0].remaining;
+            prevBagValue = previousEntries.slice(-1)[0].remaining;
+            const saveStock = await stock.save();
+        }
+        console.log(prevBagValue,"prevBagValue>>>>>>>>>>");
+        let isCurrentEntryEmpty = isEmpty(currentEntry)
+        if (!(isEmpty(currentEntry))) {
             entryPayload = {
                 ...payload,
                 taken: currentEntry.taken,
                 consumed: currentEntry.consumed,
-                remaining: currentEntry.remaining,
-                returned: currentEntry.returned
+                returned: currentEntry.returned,
+                remaining: currentEntry.remaining
             }
         } else {
             entryPayload = {
@@ -167,163 +150,87 @@ router.post(("/"), async (req, res, next) => {
                 remaining: 0,
                 returned: 0
             }
+            // currentEntry = [];
+            // currentEntry.push(entryPayload);
         }
-
-        let previousEntries = await Entry.find({
-            user_id: payload.user_id,
-            product_id: payload.product_id,
-            created_at: { $lt: moment(payload.created_at, "DD-MM-YYYY").utc().toISOString() }
-        }).sort({ created_at: "asc" }).exec();
-        let stock = await Stock.findOne({ user_id: payload.user_id, product_id: payload.product_id });
-        console.log(previousEntries,"previousEntries")
-        if (!(isEmpty(previousEntries))){
-        stock.bag_value =  previousEntries.slice(-1)[0].remaining;
-        prevBagValue =  previousEntries.slice(-1)[0].remaining;
-        console.log(prevBagValue,"prevBagValue>>>>")
-        const saveStock = await stock.save();
-        }else{
-            prevBagValue = 0;
-            stock.bag_value =  previousEntries.slice(-1)[0].remaining;
-            const saveStock = await stock.save();
-        }
-
-        if (isFutureEntriesPresent) {
-            const result = await addEntry(entryPayload, res, next);
-            const getAndValidateRemainingValue = (offset, currentValue) => {
-                // const offset =   currentValue - prevValue;
-                // console.log(offset,currentValue,prevValue,"test");
-                remaining = currentValue + offset
-                if (remaining < 0) {
-                    throw ("unable to update future entries")
-                } else {
-                    return remaining;
+        // console.log(currentEntry,"current")
+        const totalEntries = [entryPayload, ...futureEntries];
+        console.log(totalEntries, "total");
+        let rowsToBeInserted = totalEntries.reduce((acc, item, index) => {
+            let updatedItem = [];
+            console.log(item, "item>>>>>>>>>>.")
+            if (index === 0) {
+                // item["entry_type"] = payload.entry_type;
+                // item["entry_value"] = payload.entry_value;
+                updatedItem = {
+                    ...item._doc,
+                    ...getBagValue(entryPayload, prevBagValue || 0),
                 }
-            }
-            const rowsToBeInserted = futureEntries.reduce((acc, item, index) => {
-                let updatedItem = [];
-                const offset = result.remaining - entryPayload.remaining
-                console.log(offset)
-                // console.log(item, "item>>>>>>>>>>.")
-                if (index === 0) {
-                    updatedItem = {
-                        ...item._doc,
-                        remaining:getAndValidateRemainingValue(offset, item._doc.remaining)
-                        // ...getAndValidateRemainingValue(offset, item._doc.remaining)
-                    }
-                } else {
-                    updatedItem = {
-                        ...item._doc,
-                        remaining:getAndValidateRemainingValue(offset, item._doc.remaining)
-                    }
-                }
-                console.log(updatedItem, "update")
-                acc.push(updatedItem);
-                return acc;
-            }, []);
-            if (isCurrentEntryPresent) {
-                const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
-                    $set: {
-                        remaining: result.remaining,
-                        taken: result.entry.taken,
-                        consumed: result.entry.consumed,
-                        returned: result.entry.returned
-                    }
-                });
             } else {
-                const saveEntry = await result.entry.save();
-
+                updatedItem = {
+                    ...item._doc,
+                    ...getBagValue(item._doc, acc[index - 1].remaining),
+                }
             }
-            // let stock = await Stock.findOne({ user_id: payload.user_id, product_id: payload.product_id });
-            console.log(rowsToBeInserted.slice(-1)[0].remaining,"rowsToBeInserted.slice(-1)[0].")
-            stock.bag_value = Number(rowsToBeInserted.slice(-1)[0].remaining);
-            stock.save();
-            const entriesToBeDeleted = rowsToBeInserted.map((item) => item._id );
-                        const deletedEntries = await Entry.deleteMany({ _id: { $in: entriesToBeDeleted } });
-            const insertedRows = await Entry.insertMany(rowsToBeInserted);
-            res.status(201).json(formatResponse(true, "entry updated successfully", { insertedEntries: insertedRows }));
+            console.log(updatedItem, "update")
+            acc.push(updatedItem);
+            return acc;
+        }, []);
+
+        let offsetToBeAdded = rowsToBeInserted[0].remaining - entryPayload.remaining;
+        // if(isCurrentEntryEmpty){
+        //     currentEntry.pop();
+        // }
+        // currentEntry.splice(1,1);
+        console.log(rowsToBeInserted, "rowsToBeInserted>>>>>>>>>.");
+        console.log(currentEntry);
+        const entriesToBeInserted = rowsToBeInserted.filter((item, index) => index !== 0);
+        const entriesToBeDeleted = entriesToBeInserted.map((item) => item._id);
+
+        const entriesToBeUpdated = rowsToBeInserted.filter((item, index) => index !== 0).map((item) => item._id);
+        console.log(entriesToBeUpdated);
+        // return false
+        if (!(isCurrentEntryEmpty)) {
+            entryPayload = {
+                ...req.body,
+                taken: currentEntry.taken,
+                consumed: currentEntry.consumed,
+                returned: currentEntry.returned,
+                remaining: currentEntry.remaining
+            }
+            const result = await addEntry(entryPayload, res, next);
+            console.log(result,"result>>>>>.")
+            const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
+                $set: {
+                    remaining: result.remaining,
+                    taken: result.entry.taken,
+                    consumed: result.entry.consumed,
+                    returned: result.entry.returned
+                }
+            });
+            console.log(entriesToBeInserted);
+            return false;
+            const deletedEntries = await Entry.deleteMany({ _id: { $in: entriesToBeDeleted } });
+            const insertedRows = await Entry.insertMany(entriesToBeInserted);
+            console.log(result, "result>>>>>>>>>>>>>>>>>>>>.")
+            // let stock = await Stock.findOne({ product_id: payload.product_id, user_id: payload.user_id });
+            // stock.remaining =  result.remaining;
+            // let saveStock = await stock.save();
+            res.status(201).json(formatResponse(true, "entry updated successfully", { updatedEntry: updateEntry }));
         } else {
-            const result = await addEntry(entryPayload, res, next);
-            console.log(isCurrentEntryPresent);
-            if (isCurrentEntryPresent) {
-                const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
-                    $set: {
-                        remaining: result.remaining,
-                        taken: result.entry.taken,
-                        consumed: result.entry.consumed,
-                        returned: result.entry.returned
-                    }
-                });
-                res.status(201).json(formatResponse(true, "entry updated successfully", { createdEntry: updateEntry }));
-            } else {
-                const saveEntry = await result.entry.save();
-                res.status(201).json(formatResponse(true, "entry created successfully", { createdEntry: saveEntry }));
-
+            entryPayload = {
+                ...req.body,
+                taken: 0,
+                consumed: 0,
+                remaining: 0,
+                returned: 0
             }
-            // console.log(entriesToBeInserted,"resul>>>>>>>>.");
-            // return false
-            // let isCurrentEntryEmpty = isEmpty(currentEntry)
-            // const totalEntries = [entryPayload, ...futureEntries];
-            // console.log(totalEntries, "total");
-            // let rowsToBeInserted = totalEntries.reduce((acc, item, index) => {
-            //     let updatedItem = [];
-            //     console.log(item, "item>>>>>>>>>>.")
-            //     if (index === 0) {
-            //         updatedItem = {
-            //             ...item._doc,
-            //             ...getBagValue(entryPayload, prevBagValue || 0),
-            //         }
-            //     } else {
-            //         updatedItem = {
-            //             ...item._doc,
-            //             ...getBagValue(item._doc, acc[index - 1].remaining),
-            //         }
-            //     }
-            //     console.log(updatedItem, "update")
-            //     acc.push(updatedItem);
-            //     return acc;
-            // }, []);
-
-            // let offsetToBeAdded = rowsToBeInserted[0].remaining - entryPayload.remaining;
-            // if(isCurrentEntryEmpty){
-            //     currentEntry.pop();
-            // }
-            // currentEntry.splice(1,1);
-            // const entriesToBeInserted = rowsToBeInserted.filter((item, index) => index !== 0);
-            // const entriesToBeDeleted = entriesToBeInserted.map((item) => item._id);
-
-            // const entriesToBeUpdated = rowsToBeInserted.filter((item, index) => index !== 0).map((item) => item._id);
-            // console.log(entriesToBeUpdated);
-            // return false
-            // if (!(isCurrentEntryEmpty)) {
-            //     entryPayload = {
-            //         ...req.body,
-            //         taken: currentEntry.taken,
-            //         consumed: currentEntry.consumed,
-            //         returned: currentEntry.returned,
-            //         remaining: currentEntry.remaining
-            //     }
-            //     const result = await addEntry(entryPayload, res, next);
-            //     console.log(result,"result>>>>>.")
-            //     const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
-            //         $set: {
-            //             remaining: result.remaining,
-            //             taken: result.entry.taken,
-            //             consumed: result.entry.consumed,
-            //             returned: result.entry.returned
-            //         }
-            //     });
-            //     console.log(entriesToBeInserted);
-            //     return false;
-            //     const deletedEntries = await Entry.deleteMany({ _id: { $in: entriesToBeDeleted } });
-            //     const insertedRows = await Entry.insertMany(entriesToBeInserted);
-            //     console.log(result, "result>>>>>>>>>>>>>>>>>>>>.")
-            //     // let stock = await Stock.findOne({ product_id: payload.product_id, user_id: payload.user_id });
-            //     // stock.remaining =  result.remaining;
-            //     // let saveStock = await stock.save();
-            //     res.status(201).json(formatResponse(true, "entry updated successfully", { updatedEntry: updateEntry }));
-            // }
-            // const deletedEntries = await Entry.deleteMany({ _id: { $in: entriesToBeDeleted } });
-            // const insertedRows = await Entry.insertMany(entriesToBeInserted);
+            const result = await addEntry(entryPayload, res, next)
+            const saveEntry = await result.entry.save();
+            console.log(entriesToBeInserted,"resul>>>>>>>>.");
+            return false
+            const deletedEntries = await Entry.deleteMany({ _id: { $in: entriesToBeDeleted } });
+            const insertedRows = await Entry.insertMany(entriesToBeInserted);
             // await Entry.find({ _id: { $in: entriesToBeUpdated } }).forEach((doc) => {
             //     Entry.update({ _id: doc._id }, { set: { remaining: doc.remaining + offsetToBeAdded } })
             // })
@@ -334,16 +241,16 @@ router.post(("/"), async (req, res, next) => {
             //     }
             // ]);
 
-            //             let test = await Entry.aggregate(
-            //     [
-            //                      { $match: { _id: { $in: entriesToBeUpdated } } },
+        //             let test = await Entry.aggregate(
+        //     [
+        //                      { $match: { _id: { $in: entriesToBeUpdated } } },
 
-            //         { $project: {
-            //             total: { $sum: ["$remaining", 7] }
-            //         }}
-            //     ]
-            // )
-            // console.log(test,"dekh bhai");
+        //         { $project: {
+        //             total: { $sum: ["$remaining", 7] }
+        //         }}
+        //     ]
+        // )
+        // console.log(test,"dekh bhai");
             // const updateFutureEntries = await Entry.updateMany({ _id: { $in: entriesToBeUpdated } },{$set: { 
             //     remaining: $this.remaining + Number(offsetToBeAdded)
             // }});
@@ -356,6 +263,8 @@ router.post(("/"), async (req, res, next) => {
             //    },[]);
             //    console.log(test,"test>>>>>>>>>>>>>");
             // }
+
+            res.status(201).json(formatResponse(true, "entry created successfully", { createdEntry: saveEntry }));
         }
 
     } catch (error) {
