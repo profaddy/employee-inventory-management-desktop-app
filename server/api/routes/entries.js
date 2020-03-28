@@ -111,7 +111,7 @@ const addEntry = async (payload, res, next) => {
 
 router.get(("/"), async (req, res, next) => {
     try {
-        const entries = await Entry.find({ product_name: "i7", user_name: "a7" }).sort({ created_at: 'asc' }).exec();
+        const entries = await Entry.find().sort({ created_at: 'asc' }).exec();
         res.status(200).json(formatResponse(true, "entries retrieved successfully", { entries: entries }));
     } catch (error) {
         res.status(500).json(formatResponse(false, `error occured while retrieving entries: ${error}`))
