@@ -10,7 +10,7 @@ function* addEntrySaga(action) {
         yield put(createNotification("Entry added successfully", "success"));
         yield put({ type: Actions.ADD_ENTRY_SUCCESS });
     } catch (error) {
-        yield put(createNotification(`error while creating entry: ${error.response.data.message}`, "error"));
+        yield put(createNotification(`${error.response.data.message}`, "error"));
         yield put({ type: Actions.ADD_ENTRY_FAILURE });
     }
 }
@@ -25,18 +25,22 @@ function* updateEntrySaga(action) {
             window.location.reload();
         }, 1000);
     } catch (error) {
-        yield put(createNotification(`error while updating entry: ${error.response.data.message}`, "error"));
+        yield put(createNotification(`${error.response.data.message}`, "error"));
         yield put({ type: Actions.UPDATE_ENTRY_FAILURE });
     }
 }
 
 function* deleteEntrySaga(action) {
     try {
-        yield call(deleteEntry, action.id);
+        console.log(action.data)
+        yield call(deleteEntry, action.data);
         yield put(createNotification("Entry deleted successfully", "success"));
         yield put({ type: Actions.DELETE_ENTRY_SUCCESS });
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     } catch (error) {
-        yield put(createNotification(`error while creating entry: ${error.response.data.message}`, "error"));
+        yield put(createNotification(`${error.response.data.message}`, "error"));
         yield put({ type: Actions.DELETE_ENTRY_FAILURE });
     }
 }
@@ -64,7 +68,6 @@ function* fetchEntriesSaga(action) {
     } catch (error) {
         yield put(createNotification(`error while fetching entry: ${error.response.data.message}`, "error"));
         yield put({ type: Actions.FETCH_ENTRY_FAILURE });
-        console.error("error occured while fetching entries", error);
     }
 }
 
@@ -72,10 +75,26 @@ function* fetchEntryInfoSaga(action) {
     try {
         const { id } = action;
         const { data } = yield call(fetchEntryInfo, id);
-        const { entry } = data;
-        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
-        yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
+        let { entry } = data;
+        const created_at = moment.utc(entry.created_at, "YYYY-MM-DDThh:mm:ss.sssZ").local().format("DD-MM-YYYY");
+        const entryToBeUpdated = {
+            ...entry,
+            created_at:created_at,
+            product_name:entry.product_name,
+            user_name:entry.user_name,
+            taken:entry.taken,
+            consumed:entry.consumed,
+            returned:entry.returned,
+            remaining:entry.remaining,
+            _id:entry._id,
+        };
+        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entryToBeUpdated });
+        if(action.mode === "edit"){
+            yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
+            yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
+        }
     } catch (error) {
+        console.log(error)
         yield put(createNotification(`error while fetching entry info: ${error.response.data.message}`, "error"));
         yield put({ type: Actions.FETCH_ENTRY_INFO_FAILURE });
     }

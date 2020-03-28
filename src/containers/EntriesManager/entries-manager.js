@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import MUIDataTable from "mui-datatables";
+import moment from "moment";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
+import DialogWrapper from "../../components/DialogWrapper/DialogWrapper";
+import AdminAuthentication from "../../components/AdminAuthentication/AdminAuthentication"
 import EntryForm from "../../components/EntryForm/EntryForm";
 import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import AddInventoryForm from "../../components/AddInventoryForm/AddInventoryForm";
@@ -19,39 +22,13 @@ class EntriesManager extends Component {
             addEntryModalShowing: false,
             savedEntries: [],
             entryMode: "add",
-            showDeleteDialog:false
+            showDeleteDialog:false,
+            showEditOptions:false,
+            columns:this.columns.filter((column) => column.name !== "Actions"),
+            isEditConfirmDialogOpen:false,
+            isAuthenticated:false,
+            password:"admin"
         };
-    }
-    componentDidMount() {
-        this.props._fetchEntries();
-        this.props._fetchUsers();
-        this.props._fetchInventories();
-    }
-    openAddEntryModal = () => {
-        this.props._openAddEntryModal();
-    }
-    openAddUserModal = () => {
-        this.props._openAddUserModal();
-    }
-    openAddInventoryModal = () => {
-        this.props._openAddInventoryModal()
-    }
-    closeAddEntryModal = () => {
-        this.props._closeAddEntryModal();
-        this.setState({ entryMode: "add" });
-    }
-    closeAddUserModal = () => {
-        this.props._closeAddUserModal()
-    }
-    closeAddInventoryrModal = () => {
-        this.props._closeAddInventoryModal();
-    }
-    onDeleteEntry = () => {
-        this.props._deleteEntry(this.state.deleteItemId);
-        this.setState({ entryMode: "add",showDeleteDialog:false });
-    } 
-    hideDeleteDialog = () => {
-        this.setState({ entryMode: "add",showDeleteDialog:false });
     }
 
     columns = [
@@ -75,7 +52,7 @@ class EntriesManager extends Component {
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
                         <Button onClick={() => {
-                            this.props._fetchEntryInfo(value);
+                            this.props._fetchEntryInfo(value,"edit");
                             this.setState({ entryMode: "edit" });
                         }}>
                             {" "}
@@ -90,7 +67,7 @@ class EntriesManager extends Component {
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
                         <Button onClick={() => {
-                            // this.props._fetchEntryInfo(value);
+                            this.props._fetchEntryInfo(value,"delete");
                             this.setState({ entryMode: "delete",deleteItemId:value,showDeleteDialog:true });
                         }}>
                             {" "}
@@ -102,9 +79,83 @@ class EntriesManager extends Component {
         }
     ]
 
+    componentDidMount() {
+        // const filteredColumns = this.columns.fliter((column) => column.name === "Actions")
+        console.log("test")
+        this.props._fetchEntries();
+        this.props._fetchUsers();
+        this.props._fetchInventories();
+        const authenticated = localStorage.getItem("authenticated",true);
+        console.log(authenticated,"dehe")
+        if(authenticated === "true"){
+            this.setState({columns:this.columns,showEditOptions:true});
+        }
+}
+    openAddEntryModal = () => {
+        this.props._openAddEntryModal();
+    }
+    openAddUserModal = () => {
+        this.props._openAddUserModal();
+    }
+    openAddInventoryModal = () => {
+        this.props._openAddInventoryModal()
+    }
+    closeAddEntryModal = () => {
+        this.props._closeAddEntryModal();
+        this.setState({ entryMode: "add" });
+    }
+    closeAddUserModal = () => {
+        this.props._closeAddUserModal()
+    }
+    closeAddInventoryrModal = () => {
+        this.props._closeAddInventoryModal();
+    }
+    onDeleteEntry = () => {
+        const { selectedEntry } = this.props;
+        console.log(selectedEntry,"selectedEntry");
+        // const created_at = moment(selectedEntry.cea).format("DD-MM-YYYY")
+        this.props._deleteEntry({...selectedEntry,entry_mode:"edit"});
+        // this.props._deleteEntry(this.state.deleteItemId);
+        // this.setState({ entryMode: "add",showDeleteDialog:false });
+    } 
+    hideDeleteDialog = () => {
+        this.setState({ entryMode: "add",showDeleteDialog:false });
+    }
+
+    openEditConfirmDialog = () => {
+        this.setState({isEditConfirmDialogOpen:true});
+    }
+    closeEditConfirmDialog = () => {
+        this.setState({isEditConfirmDialogOpen:false,isAuthenticated:false});
+    }
+    onEditConfirmDialogSubmit = (e)  =>{
+        e.preventDefault();
+    }
+
+    toggleEditOptions = (value) => {
+        let columns = this.columns;
+        if(value === "showEdit"){
+            this.setState({showEditOptions:true,columns:columns});
+        }else if(value === "hideEdit"){
+            const filteredColumns = columns.filter((options) => options.name !== "Actions");
+            localStorage.setItem("authenticated",false)
+            this.setState({columns:filteredColumns,showEditOptions:false});
+        }
+    }
+    checkAdminPassword = (values) => {
+        if(values.adminPassword === this.props.adminPassword){
+            localStorage.setItem("authenticated",true)
+            this.props._doAuthenticateEdit(true);
+            this.toggleEditOptions("showEdit");
+            this.closeEditConfirmDialog();
+        }else{
+            this.props.createNotification("Incorrect credentials","error")
+            // this.closeEditConfirmDialog();
+        }
+    }
+    
     render() {
-        console.log(this.props,"props");
-        const { entries, addEntryModalShowing,addUserModalShowing,addInventoryModalShowing,classes } = this.props;
+        const { entries, addEntryModalShowing,addUserModalShowing,addInventoryModalShowing,classes,isAuthenticated } = this.props;
         return (
             <div>
                 <div className={classes.AddEntryButton}>
@@ -117,13 +168,33 @@ class EntriesManager extends Component {
                     <Button color="primary" onClick={this.openAddInventoryModal}>
                         Add Inventry
                     </Button>
+                    {!this.state.showEditOptions &&
+                        <Button color="primary" onClick={() => this.openEditConfirmDialog()}>
+                            Show Edit
+                        </Button>
+                    }
+                    {this.state.showEditOptions &&
+                        <Button color="primary" onClick={() => this.toggleEditOptions("hideEdit")}>
+                            Hide Edit
+                        </Button>
+                    }
                 </div>
                 <MUIDataTable
                     title={"Switch On Services Employee List"}
                     data={entries}
-                    columns={this.columns}
+                    columns={this.state.columns || this.columns}
                     options={options}
                 />
+                <DialogWrapper
+                title={"Authenticate"}
+                content={<AdminAuthentication verifyPassword={this.checkAdminPassword}/>}
+                isOpen={this.state.isEditConfirmDialogOpen}
+                onSubmit={this.onEditConfirmDialogSubmit}
+                onClose={this.closeEditConfirmDialog}
+                formName={"admin-password"}
+                >
+
+                </DialogWrapper>
                 <ModalWrapper
                     title={"Add Entry"}
                     isOpen={addEntryModalShowing}
@@ -172,7 +243,7 @@ class EntriesManager extends Component {
                     />
                 </ModalWrapper>
                 <DeleteDialogWrapper
-                        itemTobeDeleted={"host"}
+                        itemTobeDeleted={"entry"}
                         // itemName={selectedRowIp}
                         onClose={this.hideDeleteDialog}
                         onSubmit={this.onDeleteEntry}

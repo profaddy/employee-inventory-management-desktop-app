@@ -8,7 +8,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";import Button from "@material-ui/core/Button";
 import styles from "./styles";
 
-const DialogWrapper = ({ title, content, onClose, onSubmit, isOpen }) => {
+const DialogWrapper = ({ title, content, onClose, onSubmit, isOpen, formName }) => {
     return (
         <Dialog
             disableBackdropClick
@@ -28,9 +28,16 @@ const DialogWrapper = ({ title, content, onClose, onSubmit, isOpen }) => {
                 <Button onClick={onClose} color="primary">
                     Cancel
                 </Button>
-                <Button onClick={onSubmit} color="primary">
+                {!formName &&
+                                    <Button onClick={onSubmit} color="primary">
+                                    Ok
+                                </Button>
+                }
+                {!!formName &&
+                <Button  type={"submit"} form={formName} color="primary">
                     Ok
                 </Button>
+}
             </DialogActions>
         </Dialog>
     );

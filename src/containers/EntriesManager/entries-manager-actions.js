@@ -13,10 +13,16 @@ const Actions = {
             data
         };
     },
-    _deleteEntry: (id) => {
+    _doAuthenticateEdit: (value) => {
+        return{
+            type:ActionConstants.DO_AUTHENTICATE_EDIT,
+            value
+        }
+    },
+    _deleteEntry: (data) => {
         return {
             type: ActionConstants.DELETE_ENTRY_REQUEST,
-            id
+            data
         };
     },
     _fetchEntries:() => {
@@ -24,10 +30,11 @@ const Actions = {
             type:ActionConstants.FETCH_ENTRY_REQUEST
         };
     },
-    _fetchEntryInfo:(entryId) => {
+    _fetchEntryInfo:(entryId,mode) => {
         return {
             type:ActionConstants.FETCH_ENTRY_INFO_REQUEST,
-            id:entryId
+            id:entryId,
+            mode
         };
     },
     _openAddEntryModal:() => {

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { createNotification } from "../../utils/notificationHelper";
 import EntriesManager from "./entries-manager";
 import Actions from "./entries-manager-actions";
 import userActions from "../UserManager/user-actions";
@@ -14,6 +15,8 @@ const mapStateToProps = (state) => {
         users: state.UserManager.users,
         inventories: state.InventoryManager.inventories,
         selectedEntry: state.EntriesManager.selectedEntry,
+        adminPassword: state.EntriesManager.adminPassword,
+        authenticated: state.EntriesManager.authenticated
     };
 };
 
@@ -33,7 +36,9 @@ const mapDispatchToProps = (dispatch) => {
         _openAddUserModal: bindActionCreators(userActions._openAddUserModal, dispatch),
         _closeAddUserModal: bindActionCreators(userActions._closeAddUserModal, dispatch),
         _openAddInventoryModal: bindActionCreators(inventoryActions._openAddInventoryModal, dispatch),
-        _closeAddInventoryModal: bindActionCreators(inventoryActions._closeAddInventoryModal, dispatch)
+        _closeAddInventoryModal: bindActionCreators(inventoryActions._closeAddInventoryModal, dispatch),
+        createNotification:bindActionCreators(createNotification, dispatch),
+        _doAuthenticateEdit:bindActionCreators(Actions._doAuthenticateEdit, dispatch)
     };
 };
 export default connect(
