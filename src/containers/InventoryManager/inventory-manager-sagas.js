@@ -25,10 +25,10 @@ export function* addInventorySaga(action) {
         yield call(addInventory, action.inventory);
         yield put(createNotification("Product added successfully", "success"));
         yield put({ type: Actions.ADD_INVENTORY_SUCCESS });
-        // yield put({ type: Actions.CLOSE_ADD_INVENTORY_MODAL });
-        // setTimeout(() => {
-        //     window.location.reload();
-        // }, 1000);
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
+        yield put({ type: Actions.CLOSE_ADD_INVENTORY_MODAL });
     } catch (error) {
         console.log(error);
         yield put(createNotification(`error while adding product: ${error && error.response.data.message}`, "error"));

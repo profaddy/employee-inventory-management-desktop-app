@@ -159,13 +159,13 @@ class EntriesManager extends Component {
         return (
             <div>
                 <div className={classes.AddEntryButton}>
-                    <Button color="primary" onClick={this.openAddEntryModal}>
+                    <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddEntryModal}>
                         Add Entry
                     </Button>
-                    <Button color="primary" onClick={this.openAddUserModal}>
+                    <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddUserModal}>
                         Add User
                     </Button>
-                    <Button color="primary" onClick={this.openAddInventoryModal}>
+                    <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddInventoryModal}>
                         Add Inventry
                     </Button>
                     {!this.state.showEditOptions &&
