@@ -4,7 +4,9 @@ import ActionTypes from "./entries-manager-action-constants";
 const INITIAL_STATE = {
     entries:[],
     selectedEntry:null,
-    addEntryModalShowing:false
+    addEntryModalShowing:false,
+    adminPassword:"5575",
+    authenticated:false
 };
 
 const Reducer = (state = INITIAL_STATE, action) => {
@@ -23,6 +25,11 @@ const Reducer = (state = INITIAL_STATE, action) => {
             ...state,
             selectedEntry: action.data
         };
+    case ActionTypes.DO_AUTHENTICATE_EDIT:
+        return {
+            ...state,
+            authenticated:action.value
+        }
     case ActionTypes.OPEN_ADD_ENTRY_MODAL:
         return {...state,addEntryModalShowing:true};
     case ActionTypes.CLOSE_ADD_ENTRY_MODAL:
