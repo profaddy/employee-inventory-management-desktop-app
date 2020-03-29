@@ -30,7 +30,7 @@ const theme = createMuiTheme({
     overrides: {
         MUIDataTable: {
             responsiveScroll: {
-                maxHeight: "58px"
+                maxHeight: window.innerHeight
             }
         }
     },
@@ -72,6 +72,11 @@ const theme = createMuiTheme({
         }
     },
     overrides: {
+        MUIDataTable: {
+            responsiveScroll: {
+                maxHeight:`${window.innerHeight - 175}px !important`
+            }
+        },
         MuiButton: {
             root: {
                 textTransform: "none"
