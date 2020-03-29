@@ -6,11 +6,11 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
 import DialogWrapper from "../../components/DialogWrapper/DialogWrapper";
-import AdminAuthentication from "../../components/AdminAuthentication/AdminAuthentication"
+import AdminAuthentication from "../../components/AdminAuthentication/AdminAuthentication";
 import EntryForm from "../../components/EntryForm/EntryForm";
 import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import AddInventoryForm from "../../components/AddInventoryForm/AddInventoryForm";
-import DeleteDialogWrapper from "../../components/DeleteDialogWrapper/DeleteDialogWrapper"
+import DeleteDialogWrapper from "../../components/DeleteDialogWrapper/DeleteDialogWrapper";
 import styles from "./styles";
 
 class EntriesManager extends Component {
@@ -23,7 +23,7 @@ class EntriesManager extends Component {
             showDeleteDialog:false,
             showEditOptions:false,
             columns:this.columns.filter((column) => column.name !== "Actions"),
-            isEditConfirmDialogOpen:false,
+            isEditConfirmDialogOpen:false
         };
     }
 
@@ -76,27 +76,27 @@ class EntriesManager extends Component {
     ]
 
    options = {
-        filterType: "multiselect",
-        responsive: "scroll",
-        rowsPerPage: 50,
-        selectableRowsHeader: false,
-        selectableRows: false,
-        rowsPerPageOptions: [
-            10, 30, 50, 100
-        ],
-        fixedHeader: true,
-    };
+       filterType: "multiselect",
+       responsive: "scroll",
+       rowsPerPage: 50,
+       selectableRowsHeader: false,
+       selectableRows: false,
+       rowsPerPageOptions: [
+           10, 30, 50, 100
+       ],
+       fixedHeader: true
+   };
     
 
-    componentDidMount() {
-        this.props._fetchEntries();
-        this.props._fetchUsers();
-        this.props._fetchInventories();
-        const authenticated = localStorage.getItem("authenticated",true);
-        if(authenticated === "true"){
-            this.setState({columns:this.columns,showEditOptions:true});
-        }
-}
+   componentDidMount() {
+       this.props._fetchEntries();
+       this.props._fetchUsers();
+       this.props._fetchInventories();
+       const authenticated = localStorage.getItem("authenticated",true);
+       if(authenticated === "true"){
+           this.setState({columns:this.columns,showEditOptions:true});
+       }
+   }
     openAddEntryModal = () => {
         this.props._openAddEntryModal();
     }
@@ -104,14 +104,14 @@ class EntriesManager extends Component {
         this.props._openAddUserModal();
     }
     openAddInventoryModal = () => {
-        this.props._openAddInventoryModal()
+        this.props._openAddInventoryModal();
     }
     closeAddEntryModal = () => {
         this.props._closeAddEntryModal();
         this.setState({ entryMode: "add" });
     }
     closeAddUserModal = () => {
-        this.props._closeAddUserModal()
+        this.props._closeAddUserModal();
     }
     closeAddInventoryrModal = () => {
         this.props._closeAddInventoryModal();
@@ -140,18 +140,18 @@ class EntriesManager extends Component {
             this.setState({showEditOptions:true,columns:columns});
         }else if(value === "hideEdit"){
             const filteredColumns = columns.filter((options) => options.name !== "Actions");
-            localStorage.setItem("authenticated",false)
+            localStorage.setItem("authenticated",false);
             this.setState({columns:filteredColumns,showEditOptions:false});
         }
     }
     checkAdminPassword = (values) => {
         if(values.adminPassword === this.props.adminPassword){
-            localStorage.setItem("authenticated",true)
+            localStorage.setItem("authenticated",true);
             this.props._doAuthenticateEdit(true);
             this.toggleEditOptions("showEdit");
             this.closeEditConfirmDialog();
         }else{
-            this.props.createNotification("Incorrect credentials","error")
+            this.props.createNotification("Incorrect credentials","error");
         }
     }
     
@@ -187,12 +187,12 @@ class EntriesManager extends Component {
                     options={this.options}
                 />
                 <DialogWrapper
-                title={"Authenticate"}
-                content={<AdminAuthentication verifyPassword={this.checkAdminPassword}/>}
-                isOpen={this.state.isEditConfirmDialogOpen}
-                onSubmit={this.onEditConfirmDialogSubmit}
-                onClose={this.closeEditConfirmDialog}
-                formName={"admin-password"}
+                    title={"Authenticate"}
+                    content={<AdminAuthentication verifyPassword={this.checkAdminPassword}/>}
+                    isOpen={this.state.isEditConfirmDialogOpen}
+                    onSubmit={this.onEditConfirmDialogSubmit}
+                    onClose={this.closeEditConfirmDialog}
+                    formName={"admin-password"}
                 >
 
                 </DialogWrapper>
@@ -244,12 +244,12 @@ class EntriesManager extends Component {
                     />
                 </ModalWrapper>
                 <DeleteDialogWrapper
-                        itemTobeDeleted={"entry"}
-                        // itemName={selectedRowIp}
-                        onClose={this.hideDeleteDialog}
-                        onSubmit={this.onDeleteEntry}
-                        isOpen={this.state.showDeleteDialog}
-                    />
+                    itemTobeDeleted={"entry"}
+                    // itemName={selectedRowIp}
+                    onClose={this.hideDeleteDialog}
+                    onSubmit={this.onDeleteEntry}
+                    isOpen={this.state.showDeleteDialog}
+                />
             </div>
         );
     }

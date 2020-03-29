@@ -29,7 +29,7 @@ const Reducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             authenticated:action.value
-        }
+        };
     case ActionTypes.OPEN_ADD_ENTRY_MODAL:
         return {...state,addEntryModalShowing:true};
     case ActionTypes.CLOSE_ADD_ENTRY_MODAL:

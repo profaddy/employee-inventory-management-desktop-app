@@ -16,10 +16,10 @@ const Reducer = (state = INITIAL_STATE, action) => {
             addUserModalShowing:false
         };
     case ActionTypes.OPEN_ADD_USER_MODAL:
-    return{
-        ...state,
-        addUserModalShowing:true
-    };
+        return{
+            ...state,
+            addUserModalShowing:true
+        };
     case ActionTypes.CLOSE_ADD_USER_MODAL:
         return{
             ...state,

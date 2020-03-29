@@ -15,13 +15,13 @@ const Actions = {
     },
     _openAddUserModal:() => {
         return {
-            type: ActionTypes.OPEN_ADD_USER_MODAL,
-        }
+            type: ActionTypes.OPEN_ADD_USER_MODAL
+        };
     },
     _closeAddUserModal:() => {
         return {
-            type: ActionTypes.CLOSE_ADD_USER_MODAL,
-        }
+            type: ActionTypes.CLOSE_ADD_USER_MODAL
+        };
     }
 };
 

@@ -3,7 +3,7 @@ import { Form, Field } from "react-final-form";
 import { Divider, Button, withStyles } from "@material-ui/core";
 import styles from "./styles";
 import InputField from "../InputField/InputField";
-import {validator} from "./validator"
+import {validator} from "./validator";
 
 const AddInventoryForm = ({ classes, onCancel, addInventory}) => {
     return (
@@ -18,14 +18,14 @@ const AddInventoryForm = ({ classes, onCancel, addInventory}) => {
                         render={({ handleSubmit, pristine, invalid, values }) => (
                             <form id="add-new-entry" autoComplete="off" onSubmit={handleSubmit}>
                                 <div className={classes.formContainer}>
-                                        <div style={{ width: 200 }}>
-                                            <Field
-                                                type={"text"}
-                                                label={"Product name"}
-                                                name={"name"}
-                                                component={InputField}
-                                                fullWidth={false}
-                                            />
+                                    <div style={{ width: 200 }}>
+                                        <Field
+                                            type={"text"}
+                                            label={"Product name"}
+                                            name={"name"}
+                                            component={InputField}
+                                            fullWidth={false}
+                                        />
                                     </div>
                                 </div>
                             </form>

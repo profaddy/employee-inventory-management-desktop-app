@@ -5,9 +5,9 @@ export const customValidator = {
         } else if (isNaN(value)) {
             return "Value must be a number";
         } else if (!(Number.isInteger(Number(value)))){
-            return "value must be non-negative integer"
+            return "value must be non-negative integer";
         }else if(Number(value) < 0){
-            return "value cannot be negative"
+            return "value cannot be negative";
         }
     },
 

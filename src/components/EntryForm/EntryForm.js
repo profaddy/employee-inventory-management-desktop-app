@@ -3,7 +3,7 @@ import { Form, Field } from "react-final-form";
 import { Divider, Button, withStyles } from "@material-ui/core";
 import styles from "./styles";
 import { validator } from "./validator";
-import DatePicker from 'react-date-picker';
+import DatePicker from "react-date-picker";
 import moment from "moment";
 import SelectComponent from "../../components/SelectComponent/SelectComponent";
 import InputField from "../../components/InputField/InputField";
@@ -16,7 +16,9 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
         entry_type: "taken",
         entry_mode:entryMode
     });
-    const [date,setDate] = useState(entryMode === "edit" ? selectedEntry.created_at : new Date())
+    const [
+        date,setDate
+    ] = useState(entryMode === "edit" ? selectedEntry.created_at : new Date());
     const onChange = (date) => setDate(date);
     const submitButtonText = entryMode === "edit" ? "Update" : "Create";
     const CombinedInitialValues = entryMode === "add" ? { ...initialValues } : { ...initialValues, ...selectedEntry  };
@@ -27,11 +29,11 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                     <Form
                         onSubmit={(values) => {
                             if (entryMode === "edit") {
-                                const created_at = moment(date).format("DD-MM-YYYY")
+                                const created_at = moment(date).format("DD-MM-YYYY");
                                 // const payload = pick(values, "_id", "user_id", "product_id", "entry_type", "entry_value");
                                 updateEntry({...values,entry_mode:"edit",created_at});
                             } else {
-                                const created_at = moment(date).format("DD-MM-YYYY")
+                                const created_at = moment(date).format("DD-MM-YYYY");
                                 addEntry({...values,created_at,entry_mode:"add"});
                             }
                         }}
@@ -87,28 +89,29 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                     parse={(value) => Number(value)}
                                                 />
                                             </div>
-                                        <div className={classes.installTypeFieldWrap}>
-                                            <div className={classes.label}>
+                                            <div className={classes.installTypeFieldWrap}>
+                                                <div className={classes.label}>
                                                 Entry Type
+                                                </div>
+                                                <Field
+                                                    name="entry_type"
+                                                    options={[
+                                                        {
+                                                            name: "Taken",
+                                                            value: "taken"
+                                                        }, {
+                                                            name: "Consumed",
+                                                            value: "consumed"
+                                                        }, {
+                                                            name: "Returned",
+                                                            value: "returned"
+                                                        }
+                                                    ]}
+                                                    width={150}
+                                                    component={ToggleComponent}
+                                                />
                                             </div>
-                                            <Field
-                                                name="entry_type"
-                                                options={[
-                                                    {
-                                                        name: "Taken",
-                                                        value: "taken"
-                                                    }, {
-                                                        name: "Consumed",
-                                                        value: "consumed"
-                                                    }, {
-                                                        name: "Returned",
-                                                        value: "returned"
-                                                    }
-                                                ]}
-                                                width={150}
-                                                component={ToggleComponent}
-                                            />
-                                        </div></>}
+                                        </>}
                                         {entryMode === "edit" && 
                                         <div className={classes.editFieldWrap}>
                                             <div className={classes.editFlexItem}>
@@ -120,8 +123,8 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                     fullWidth={false}
                                                     parse={(value) => Number(value)}
                                                 />
-                                        </div>
-                                        <div className={classes.editFlexItem}>
+                                            </div>
+                                            <div className={classes.editFlexItem}>
                                                 <Field
                                                     type={"number"}
                                                     label={"consumed Quantity"}
@@ -130,8 +133,8 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                     fullWidth={false}
                                                     parse={(value) => Number(value)}
                                                 />
-                                        </div>
-                                        <div className={classes.editFlexItem}>
+                                            </div>
+                                            <div className={classes.editFlexItem}>
                                                 <Field
                                                     type={"number"}
                                                     label={"Returned Quantity"}
@@ -140,24 +143,24 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                                                     fullWidth={false}
                                                     parse={(value) => Number(value)}
                                                 />
-                                        </div>
+                                            </div>
                                         </div>}
                                         <div>
                                         </div>
                                     </div>
                                     <div className={classes.flex1}>
-                                    <div>
-                                        {/* <Field
+                                        <div>
+                                            {/* <Field
                                         name={"date"}
                                         value={date}
                                         component={}
                                         > */}
-        <DatePicker
-          onChange={onChange}
-          value={date}
-        />
-        {/* </Field> */}
-      </div>
+                                            <DatePicker
+                                                onChange={onChange}
+                                                value={date}
+                                            />
+                                            {/* </Field> */}
+                                        </div>
                                     </div>
                                 </div>
                             </form>

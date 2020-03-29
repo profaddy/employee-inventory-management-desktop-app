@@ -29,15 +29,15 @@ const DialogWrapper = ({ title, content, onClose, onSubmit, isOpen, formName }) 
                     Cancel
                 </Button>
                 {!formName &&
-                                    <Button onClick={onSubmit} color="primary">
+                <Button onClick={onSubmit} color="primary">
                                     Ok
-                                </Button>
+                </Button>
                 }
                 {!!formName &&
                 <Button  type={"submit"} form={formName} color="primary">
                     Ok
                 </Button>
-}
+                }
             </DialogActions>
         </Dialog>
     );

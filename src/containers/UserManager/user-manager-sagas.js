@@ -1,7 +1,7 @@
 import Actions from "./user-manager-action-constants";
 import { all, put, select, takeEvery, call } from "redux-saga/effects";
 import { fetchUsers, addUser } from "./user-manager-api.js";
-import {createNotification} from "../../utils/notificationHelper"
+import {createNotification} from "../../utils/notificationHelper";
 
 function* fetchUsersSaga(action) {
     try {

@@ -14,13 +14,13 @@ const Actions = {
     },
     _openAddInventoryModal:() => {
         return {
-            type: ActionTypes.OPEN_ADD_INVENTORY_MODAL,
-        }
+            type: ActionTypes.OPEN_ADD_INVENTORY_MODAL
+        };
     },
     _closeAddInventoryModal:() => {
         return {
-            type: ActionTypes.CLOSE_ADD_INVENTORY_MODAL,
-        }
+            type: ActionTypes.CLOSE_ADD_INVENTORY_MODAL
+        };
     }
 };
 

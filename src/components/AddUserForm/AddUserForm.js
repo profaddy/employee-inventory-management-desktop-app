@@ -18,14 +18,14 @@ const AddUserForm = ({ classes, onCancel, addUser}) => {
                         render={({ handleSubmit, pristine, invalid, values }) => (
                             <form id="add-new-entry" autoComplete="off" onSubmit={handleSubmit}>
                                 <div className={classes.formContainer}>
-                                        <div style={{ width: 200 }}>
-                                            <Field
-                                                type={"text"}
-                                                label={"Username"}
-                                                name={"name"}
-                                                component={InputField}
-                                                fullWidth={false}
-                                            />
+                                    <div style={{ width: 200 }}>
+                                        <Field
+                                            type={"text"}
+                                            label={"Username"}
+                                            name={"name"}
+                                            component={InputField}
+                                            fullWidth={false}
+                                        />
                                     </div>
                                 </div>
                             </form>

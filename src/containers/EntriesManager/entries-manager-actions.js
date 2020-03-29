@@ -17,7 +17,7 @@ const Actions = {
         return{
             type:ActionConstants.DO_AUTHENTICATE_EDIT,
             value
-        }
+        };
     },
     _deleteEntry: (data) => {
         return {

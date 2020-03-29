@@ -20,15 +20,15 @@ const AdminAuthentication = ({ classes , verifyPassword,onDeleteEntry }) => {
                             <form id="admin-password" autoComplete="off" onSubmit={handleSubmit}>
                                 {/* <FormSpy onChange={state => this.updateDetails(state.values)} /> */}
                                 <div className={classes.formContainer}>
-                                <div style={{ width: 200 }}>
-                                                <Field
-                                                    type={"password"}
-                                                    label={"Password"}
-                                                    name={"adminPassword"}
-                                                    component={InputField}
-                                                    fullWidth={false}
-                                                />
-                                            </div>
+                                    <div style={{ width: 200 }}>
+                                        <Field
+                                            type={"password"}
+                                            label={"Password"}
+                                            name={"adminPassword"}
+                                            component={InputField}
+                                            fullWidth={false}
+                                        />
+                                    </div>
 
                                 </div>
                             </form>

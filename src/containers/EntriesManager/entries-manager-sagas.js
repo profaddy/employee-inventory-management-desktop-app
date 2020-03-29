@@ -85,7 +85,7 @@ function* fetchEntryInfoSaga(action) {
             consumed:entry.consumed,
             returned:entry.returned,
             remaining:entry.remaining,
-            _id:entry._id,
+            _id:entry._id
         };
         yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
         yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });

@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 const Reducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
     case ActionTypes.ADD_INVENTORY_SUCCESS:
-        return state
+        return state;
     case ActionTypes.FETCH_INVENTORIES_SUCCESS:
         return{
             ...state,

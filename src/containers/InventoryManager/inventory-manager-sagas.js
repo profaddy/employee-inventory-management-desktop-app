@@ -32,7 +32,6 @@ export function* addInventorySaga(action) {
     } catch (error) {
         yield put(createNotification(`error while adding product: ${error && error.response.data.message}`, "error"));
         yield put({ type: Actions.ADD_INVENTORY_FAILURE });
-
     }
 }
 
