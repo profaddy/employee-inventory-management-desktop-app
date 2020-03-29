@@ -3,9 +3,12 @@ import MUIDataTable from "mui-datatables";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
+import LocalMallOutlinedIcon from "@material-ui/icons/LocalMallOutlined";
 import withStyles from "@material-ui/core/styles/withStyles";
-import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
+import PersonAddOutlinedIcon from "@material-ui/icons/PersonAddOutlined";
+import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
+import EventOutlinedIcon from "@material-ui/icons/EventOutlined";
+import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 import DialogWrapper from "../../components/DialogWrapper/DialogWrapper";
 import AdminAuthentication from "../../components/AdminAuthentication/AdminAuthentication";
 import EntryForm from "../../components/EntryForm/EntryForm";
@@ -30,11 +33,19 @@ class EntriesManager extends Component {
 
     columns = [
         {
-            name: "created_at"
+            name: <div style={{display:"flex"}}>
+                <EventOutlinedIcon color="primary"/>
+                {" "}
+Created_at
+            </div>
         }, {
             name: "Inventory"
         }, {
-            name: "Username"
+            name: <div style={{display:"flex"}}>
+                <PermIdentityOutlinedIcon color="primary"/>
+                {" "}
+Username
+            </div>
         }, {
             name: "Taken"
         }, {
@@ -42,7 +53,11 @@ class EntriesManager extends Component {
         }, {
             name: "Returned"
         }, {
-            name: <div style={{display:"flex"}}><LocalMallOutlinedIcon color="primary"/> Bag</div>,
+            name: <div style={{display:"flex"}}>
+                <LocalMallOutlinedIcon color="primary"/>
+                {" "}
+Bag
+            </div>
         }, {
             name: "Actions",
             options: {
@@ -162,33 +177,42 @@ class EntriesManager extends Component {
             <div>
                 <div className={classes.AddEntryButton}>
                     <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddEntryModal}>
-                        Add Entry
+                        <AddCircleOutlineOutlinedIcon />
+                        <span style={{marginRight:5}}></span>
+                        <span>
+Add Entry
+                        </span>
                     </Button>
                     <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddUserModal}>
-                        Add User
+                        <PersonAddOutlinedIcon /> 
+                        {" "}
+                        <span style={{marginRight:5}}></span>
+                        <span>
+Add User
+                        </span>
                     </Button>
                     <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddInventoryModal}>
                         Add Inventry
                     </Button>
                     {!this.state.showEditOptions &&
                         <Button color="primary" onClick={() => this.openEditConfirmDialog()}>
-                            Show Edit
+                            Show Edit 
                         </Button>
                     }
                     {this.state.showEditOptions &&
-                        <Button color="primary" onClick={() => this.toggleEditOptions("hideEdit")}>
+                        <Button variant="outlined" className={classes.button} color="secondary" onClick={() => this.toggleEditOptions("hideEdit")}>
                             Hide Edit
                         </Button>
                     }
                 </div>
                 <div>
-                <MUIDataTable
-                    title={"Switch On Services Employee List"}
-                    data={entries}
-                    columns={this.state.columns || this.columns}
-                    options={this.options}
-                    styles={{}}
-                />
+                    <MUIDataTable
+                        title={"Switch On Services Employee List"}
+                        data={entries}
+                        columns={this.state.columns || this.columns}
+                        options={this.options}
+                        styles={{}}
+                    />
                 </div>
                 <DialogWrapper
                     title={"Authenticate"}

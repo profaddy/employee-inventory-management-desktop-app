@@ -30,7 +30,6 @@ const EntryForm = ({ classes, onCancel, addEntry, users, inventories, entryMode,
                         onSubmit={(values) => {
                             if (entryMode === "edit") {
                                 const created_at = moment(date).format("DD-MM-YYYY");
-                                // const payload = pick(values, "_id", "user_id", "product_id", "entry_type", "entry_value");
                                 updateEntry({...values,entry_mode:"edit",created_at});
                             } else {
                                 const created_at = moment(date).format("DD-MM-YYYY");
