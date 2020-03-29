@@ -32,7 +32,6 @@ function* updateEntrySaga(action) {
 
 function* deleteEntrySaga(action) {
     try {
-        console.log(action.data)
         yield call(deleteEntry, action.data);
         yield put(createNotification("Entry deleted successfully", "success"));
         yield put({ type: Actions.DELETE_ENTRY_SUCCESS });
@@ -88,13 +87,12 @@ function* fetchEntryInfoSaga(action) {
             remaining:entry.remaining,
             _id:entry._id,
         };
-        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entryToBeUpdated });
-        if(action.mode === "edit"){
-            yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
-            yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
+        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
+        yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
+        if(action.mode === "delete"){
+            yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entryToBeUpdated });
         }
     } catch (error) {
-        console.log(error)
         yield put(createNotification(`error while fetching entry info: ${error.response.data.message}`, "error"));
         yield put({ type: Actions.FETCH_ENTRY_INFO_FAILURE });
     }

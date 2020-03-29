@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MUIDataTable from "mui-datatables";
-import moment from "moment";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -12,7 +11,6 @@ import EntryForm from "../../components/EntryForm/EntryForm";
 import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import AddInventoryForm from "../../components/AddInventoryForm/AddInventoryForm";
 import DeleteDialogWrapper from "../../components/DeleteDialogWrapper/DeleteDialogWrapper"
-import { options } from "./helpers";
 import styles from "./styles";
 
 class EntriesManager extends Component {
@@ -26,8 +24,6 @@ class EntriesManager extends Component {
             showEditOptions:false,
             columns:this.columns.filter((column) => column.name !== "Actions"),
             isEditConfirmDialogOpen:false,
-            isAuthenticated:false,
-            password:"admin"
         };
     }
 
@@ -79,14 +75,24 @@ class EntriesManager extends Component {
         }
     ]
 
+   options = {
+        filterType: "multiselect",
+        responsive: "scroll",
+        rowsPerPage: 50,
+        selectableRowsHeader: false,
+        selectableRows: false,
+        rowsPerPageOptions: [
+            10, 30, 50, 100
+        ],
+        fixedHeader: true,
+    };
+    
+
     componentDidMount() {
-        // const filteredColumns = this.columns.fliter((column) => column.name === "Actions")
-        console.log("test")
         this.props._fetchEntries();
         this.props._fetchUsers();
         this.props._fetchInventories();
         const authenticated = localStorage.getItem("authenticated",true);
-        console.log(authenticated,"dehe")
         if(authenticated === "true"){
             this.setState({columns:this.columns,showEditOptions:true});
         }
@@ -112,11 +118,7 @@ class EntriesManager extends Component {
     }
     onDeleteEntry = () => {
         const { selectedEntry } = this.props;
-        console.log(selectedEntry,"selectedEntry");
-        // const created_at = moment(selectedEntry.cea).format("DD-MM-YYYY")
         this.props._deleteEntry({...selectedEntry,entry_mode:"edit"});
-        // this.props._deleteEntry(this.state.deleteItemId);
-        // this.setState({ entryMode: "add",showDeleteDialog:false });
     } 
     hideDeleteDialog = () => {
         this.setState({ entryMode: "add",showDeleteDialog:false });
@@ -150,7 +152,6 @@ class EntriesManager extends Component {
             this.closeEditConfirmDialog();
         }else{
             this.props.createNotification("Incorrect credentials","error")
-            // this.closeEditConfirmDialog();
         }
     }
     
@@ -183,7 +184,7 @@ class EntriesManager extends Component {
                     title={"Switch On Services Employee List"}
                     data={entries}
                     columns={this.state.columns || this.columns}
-                    options={options}
+                    options={this.options}
                 />
                 <DialogWrapper
                 title={"Authenticate"}

@@ -72,7 +72,6 @@ getEditBagValue = (payload, currentBagValue) => {
 }
 const addEntry = async (payload, res, next) => {
     try {
-        console.log(payload,"pay>>>>")
         let remaining = 0;
         let calculatedBagValues = {};
         let product = await Product.findById(payload.product_id)
@@ -176,7 +175,6 @@ router.post(("/"), async (req, res, next) => {
             prevBagValue = previousEntries.slice(-1)[0].remaining;
             const saveStock = await stock.save();
         } else {
-            console.log("idhar to aaya hi hoga")
             prevBagValue = 0;
             stock.bag_value = prevBagValue
             const saveStock = await stock.save();
@@ -346,7 +344,6 @@ router.put(("/"), async (req, res, next) => {
             res.status(201).json(formatResponse(true, "entry updated successfully", { insertedEntries: insertedRows }));
         } else {
             const result = await addEntry(entryPayload, res, next);
-            console.log(isCurrentEntryPresent);
             if (isCurrentEntryPresent) {
                 const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
                     $set: {
@@ -371,7 +368,6 @@ router.put(("/"), async (req, res, next) => {
 
 router.delete(("/"), async (req, res, next) => {
     try {
-        console.log(req)
         const payload = req.body;
         let currentEntry = await Entry.findOne({
             user_id: payload.user_id,
@@ -405,12 +401,8 @@ router.delete(("/"), async (req, res, next) => {
             product_id: payload.product_id,
             created_at: { $lt: moment(payload.created_at, "DD-MM-YYYY").utc().toISOString() }
         }).sort({ created_at: "asc" }).exec();
-        console.log(previousEntries,"prev")
-console.log(payload.user_id,payload.product_id)
         let stock = await Stock.findOne({ user_id: payload.user_id, product_id: payload.product_id });
-        console.log(stock)
         if (!(isEmpty(previousEntries))) {
-            console.log(stock,"stock")
             stock.bag_value = previousEntries.slice(-1)[0].remaining;
             prevBagValue = previousEntries.slice(-1)[0].remaining;
             const saveStock = await stock.save();
@@ -470,7 +462,6 @@ console.log(payload.user_id,payload.product_id)
             res.status(201).json(formatResponse(true, "entry updated successfully", { insertedEntries: deletedEntry }));
         } else {
             const result = await addEntry(entryPayload, res, next);
-            console.log(isCurrentEntryPresent);
             if (isCurrentEntryPresent) {
                 const updateEntry = await Entry.updateOne({ _id: currentEntry._id }, {
                     $set: {

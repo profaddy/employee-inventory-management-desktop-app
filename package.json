@@ -1,7 +1,7 @@
 {
-  "name": "cra-electron",
+  "name": "Inventory-Management",
   "description": "CRA + Electron sitting in a tree",
-  "author": "Kitze",
+  "author": "Adnan",
   "version": "0.2.7",
   "private": true,
   "dependencies": {

@@ -1,7 +1,6 @@
 import { customValidator } from "../../utils/validators";
 
 export const validator = (values,entryMode) => {
-    console.log(values)
     const errors = {};
     if(values.entry_mode === "add"){
         errors["entry_value"] = customValidator.isPositiveNumber(values["entry_value"]);
