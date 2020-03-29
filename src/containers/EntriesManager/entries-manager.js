@@ -26,7 +26,7 @@ class EntriesManager extends Component {
             entryMode: "add",
             showDeleteDialog:false,
             showEditOptions:false,
-            columns:this.columns.filter((column) => column.name !== "Actions"),
+            columns:this.columns.filter((column,index) => index < 7 ),
             isEditConfirmDialogOpen:false
         };
     }
@@ -59,7 +59,7 @@ Username
 Bag
             </div>
         }, {
-            name: "Actions",
+            name: "Edit",
             options: {
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
@@ -74,7 +74,7 @@ Bag
                 }
             }
         },{
-            name: "Actions",
+            name: "Delete",
             options: {
                 customBodyRender: (value, tableMeta, updateValue) => {
                     return (
@@ -155,7 +155,7 @@ Bag
         if(value === "showEdit"){
             this.setState({showEditOptions:true,columns:columns});
         }else if(value === "hideEdit"){
-            const filteredColumns = columns.filter((options) => options.name !== "Actions");
+            const filteredColumns = columns.filter((column,index) => index < 7 )
             localStorage.setItem("authenticated",false);
             this.setState({columns:filteredColumns,showEditOptions:false});
         }
@@ -211,7 +211,6 @@ Add User
                         data={entries}
                         columns={this.state.columns || this.columns}
                         options={this.options}
-                        styles={{}}
                     />
                 </div>
                 <DialogWrapper
