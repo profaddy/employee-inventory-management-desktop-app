@@ -3,6 +3,7 @@ import MUIDataTable from "mui-datatables";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import withStyles from "@material-ui/core/styles/withStyles";
 import ModalWrapper from "../../components/ModalWrapper/ModalWrapper";
 import DialogWrapper from "../../components/DialogWrapper/DialogWrapper";
@@ -41,7 +42,7 @@ class EntriesManager extends Component {
         }, {
             name: "Returned"
         }, {
-            name: "Remaining"
+            name: <div style={{display:"flex"}}><LocalMallOutlinedIcon color="primary"/> Bag</div>,
         }, {
             name: "Actions",
             options: {
@@ -180,12 +181,15 @@ class EntriesManager extends Component {
                         </Button>
                     }
                 </div>
+                <div>
                 <MUIDataTable
                     title={"Switch On Services Employee List"}
                     data={entries}
                     columns={this.state.columns || this.columns}
                     options={this.options}
+                    styles={{}}
                 />
+                </div>
                 <DialogWrapper
                     title={"Authenticate"}
                     content={<AdminAuthentication verifyPassword={this.checkAdminPassword}/>}
