@@ -115,7 +115,7 @@ router.get(("/"), async (req, res, next) => {
         res.status(200).json(formatResponse(true, "entries retrieved successfully", { entries: entries }));
     } catch (error) {
         res.status(500).json(formatResponse(false, `error occured while retrieving entries: ${error}`))
-    }ss
+    }
 });
 
 router.get(("/:id"), async (req, res, next) => {

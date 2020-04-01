@@ -87,10 +87,10 @@ function* fetchEntryInfoSaga(action) {
             remaining:entry.remaining,
             _id:entry._id
         };
-        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
-        yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
-        if(action.mode === "delete"){
-            yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entryToBeUpdated });
+        yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entryToBeUpdated });
+        if(action.mode === "edit"){
+            yield put({ type: Actions.FETCH_ENTRY_INFO_SUCCESS, data: entry });
+            yield put({ type: Actions.OPEN_ADD_ENTRY_MODAL });
         }
     } catch (error) {
         yield put(createNotification(`error while fetching entry info: ${error.response.data.message}`, "error"));
