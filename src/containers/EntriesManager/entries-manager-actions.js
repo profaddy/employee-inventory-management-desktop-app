@@ -13,6 +13,12 @@ const Actions = {
             data
         };
     },
+    _filterEntry: (data) => {
+        return {
+            type: ActionConstants.FILTER_ENTRY_REQUEST,
+            data
+        }
+    },
     _doAuthenticateEdit: (value) => {
         return{
             type:ActionConstants.DO_AUTHENTICATE_EDIT,

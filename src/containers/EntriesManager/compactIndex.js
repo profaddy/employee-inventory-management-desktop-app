@@ -1,15 +1,15 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { createNotification } from "../../utils/notificationHelper";
-import EntriesManager from "./entries-manager";
+import CompactEntries from "./CompactEntries";
 import Actions from "./entries-manager-actions";
 import userActions from "../UserManager/user-actions";
 import inventoryActions from "../InventoryManager/inventory-manager-actions";
 
 const mapStateToProps = (state) => {
     return {
-        entries: state.EntriesManager.entries,
-        compactEntries: state.EntriesManager.filteredEntries,
+        entries: state.EntriesManager.filteredEntries,
+        compactEntries: state.EntriesManager.compactEntries,
         addEntryModalShowing: state.EntriesManager.addEntryModalShowing,
         addUserModalShowing: state.UserManager.addUserModalShowing,
         addInventoryModalShowing:state.InventoryManager.addInventoryModalShowing,
@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
         inventories: state.InventoryManager.inventories,
         selectedEntry: state.EntriesManager.selectedEntry,
         adminPassword: state.EntriesManager.adminPassword,
-        authenticated: state.EntriesManager.authenticated
+        authenticated: state.EntriesManager.authenticated,
     };
 };
 
@@ -46,4 +46,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(EntriesManager);
+)(CompactEntries);

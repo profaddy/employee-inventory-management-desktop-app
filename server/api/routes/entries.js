@@ -109,6 +109,61 @@ const addEntry = async (payload, res, next) => {
     }
 }
 
+router.get(("/:user_id/:created_at"), async(req,res,next) => {
+    try{
+        const { user_id,created_at } = req.params;
+        const created_value = moment(created_at, "DD-MM-YYYY").utc().toISOString();
+        const agregateEntries = await Entry.aggregate([
+            {$match:{
+                user_id:user_id,
+                created_at: {$lte:new Date(created_value)}
+            }
+        },
+        {$sort: {created_at: 1}},
+            {$group:{
+                _id:"$product_id",
+                taken:{$sum: "$taken"},
+                consumed:{$sum:"$consumed"},
+                returned:{$sum:"$returned"},
+                remaining:{"$last":"$remaining"}
+            }},
+       ])
+        const getAggregate = (id) => {
+        const filteredentries = agregateEntries.filter((item) => {
+            return id == item._id
+        })
+           return filteredentries;
+        }
+
+        const products = await Product.find();
+        const filteredEntries = products.reduce( (acc,item,index) => {
+            const data = getAggregate((item._id));
+            let updated_item = {}
+            if(isEmpty(data)){
+                updated_item = {
+                    product_name:item.name,
+                    taken:0,
+                    consumed:0,
+                    returned:0,
+                    remaining:0
+                }
+            }else{
+                updated_item = {
+                    product_name:item.name,
+                    taken:data[0].taken,
+                    consumed:data[0].consumed,
+                    returned:data[0].returned,
+                    remaining:data[0].remaining
+                }
+            }
+            acc.push(updated_item);
+            return acc;
+        },[]);        
+        res.status(200).json(formatResponse(true, "entries retrieved successfully", { filteredEntries: filteredEntries }));
+    } catch (error) {
+        res.status(500).json(formatResponse(false, `error occured while retrieving entries: ${error}`))
+    }
+})
 router.get(("/"), async (req, res, next) => {
     try {
         const entries = await Entry.find().sort({ created_at: 'asc' }).exec();

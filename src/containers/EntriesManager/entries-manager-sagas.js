@@ -2,7 +2,7 @@ import Actions from "./entries-manager-action-constants";
 import moment from "moment";
 import { createNotification } from "../../utils/notificationHelper";
 import { all, put, call, takeEvery } from "redux-saga/effects";
-import { fetchEntries, addEntry, fetchEntryInfo, updateEntry, deleteEntry } from "./entries-manager-api.js";
+import { fetchEntries, addEntry,filterEntries, fetchEntryInfo, updateEntry, deleteEntry } from "./entries-manager-api.js";
 
 function* addEntrySaga(action) {
     try {
@@ -98,12 +98,36 @@ function* fetchEntryInfoSaga(action) {
     }
 }
 
+function* filterEntrySaga(action){
+    try {
+        const { user_id, created_at} = action.data;
+        const { data } = yield call(filterEntries,user_id, created_at);
+        const { filteredEntries } = data;
+        const formattedEntries = filteredEntries.reduce((acc, item) => {
+            const entry = [
+                item.product_name,
+                item.taken,
+                item.consumed,
+                item.returned,
+                item.remaining,
+            ];
+            acc.push(entry);
+            return acc;
+        }, []);
+        yield put({ type: Actions.FILTER_ENTRY_SUCCESS, data: formattedEntries });
+    } catch (error) {
+        yield put(createNotification(`error while fetching entry: ${error.response.data.message}`, "error"));
+        yield put({ type: Actions.FILTER_ENTRY_FAILURE });
+    }
+}
+
 export default function* entriesMnaagerSagas() {
     yield all([
         takeEvery(Actions.ADD_ENTRY_REQUEST, addEntrySaga),
         takeEvery(Actions.UPDATE_ENTRY_REQUEST, updateEntrySaga),
         takeEvery(Actions.DELETE_ENTRY_REQUEST,deleteEntrySaga),
         takeEvery(Actions.FETCH_ENTRY_REQUEST, fetchEntriesSaga),
-        takeEvery(Actions.FETCH_ENTRY_INFO_REQUEST, fetchEntryInfoSaga)
+        takeEvery(Actions.FETCH_ENTRY_INFO_REQUEST, fetchEntryInfoSaga),
+        takeEvery(Actions.FILTER_ENTRY_REQUEST, filterEntrySaga)
     ]);
 }

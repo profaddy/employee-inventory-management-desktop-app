@@ -3,6 +3,7 @@ import ActionTypes from "./entries-manager-action-constants";
 
 const INITIAL_STATE = {
     entries:[],
+    filteredEntries:[],
     selectedEntry:null,
     addEntryModalShowing:false,
     adminPassword:"5575",
@@ -20,6 +21,15 @@ const Reducer = (state = INITIAL_STATE, action) => {
             ...state,
             entries:entries
         };
+        case ActionTypes.FILTER_ENTRY_SUCCESS:
+            let filteredEntries = [
+                ...state.filteredEntries
+            ];
+            filteredEntries = filteredEntries.concat(action.data);
+            return{
+                ...state,
+                filteredEntries:action.data
+            };
     case ActionTypes.FETCH_ENTRY_INFO_SUCCESS:
         return {
             ...state,

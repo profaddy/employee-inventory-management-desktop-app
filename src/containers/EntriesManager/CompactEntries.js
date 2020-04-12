@@ -11,11 +11,10 @@ import EventOutlinedIcon from "@material-ui/icons/EventOutlined";
 import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
 import DialogWrapper from "../../components/DialogWrapper/DialogWrapper";
 import AdminAuthentication from "../../components/AdminAuthentication/AdminAuthentication";
-import EntryForm from "../../components/EntryForm/EntryForm";
+import FilterForm from "../../components/FilterForm/FilterForm";
 import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import AddInventoryForm from "../../components/AddInventoryForm/AddInventoryForm";
 import DeleteDialogWrapper from "../../components/DeleteDialogWrapper/DeleteDialogWrapper";
-import FilterForm from "../../components/FilterForm/FilterForm";
 import styles from "./styles";
 
 class EntriesManager extends Component {
@@ -23,51 +22,18 @@ class EntriesManager extends Component {
         super(props);
         this.state = {
             addEntryModalShowing: false,
-            showCompact: true,
             savedEntries: [],
             entryMode: "add",
             showDeleteDialog:false,
             showEditOptions:false,
             columns:this.columns.filter((column,index) => index < 7 ),
-            isEditConfirmDialogOpen:false,
-            compactColumns:this.compactColumns,
-            filters:{created_at:null,user_id:null}
+            isEditConfirmDialogOpen:false
         };
     }
 
-    compactColumns =  [
-        {
-           name: "Inventory"
-       }, {
-           name: "Taken"
-       }, {
-           name: "Consumed"
-       }, {
-           name: "Returned"
-       }, {
-           name: <div style={{display:"flex"}}>
-               <LocalMallOutlinedIcon color="primary"/>
-               {" "}
-Bag
-           </div>
-       }
-   ]
-
     columns = [
-        {
-            name: <div style={{display:"flex"}}>
-                <EventOutlinedIcon color="primary"/>
-                {" "}
-Created_at
-            </div>
-        }, {
+         {
             name: "Inventory"
-        }, {
-            name: <div style={{display:"flex"}}>
-                <PermIdentityOutlinedIcon color="primary"/>
-                {" "}
-Username
-            </div>
         }, {
             name: "Taken"
         }, {
@@ -80,36 +46,6 @@ Username
                 {" "}
 Bag
             </div>
-        }, {
-            name: "Edit",
-            options: {
-                customBodyRender: (value, tableMeta, updateValue) => {
-                    return (
-                        <Button onClick={() => {
-                            this.props._fetchEntryInfo(value,"edit");
-                            this.setState({ entryMode: "edit" });
-                        }}>
-                            {" "}
-                            <EditIcon color="primary" />
-                        </Button>
-                    );
-                }
-            }
-        },{
-            name: "Delete",
-            options: {
-                customBodyRender: (value, tableMeta, updateValue) => {
-                    return (
-                        <Button onClick={() => {
-                            this.props._fetchEntryInfo(value,"delete");
-                            this.setState({ entryMode: "delete",deleteItemId:value,showDeleteDialog:true });
-                        }}>
-                            {" "}
-                            <DeleteIcon color="primary" />
-                        </Button>
-                    );
-                }
-            }
         }
     ]
 
@@ -194,20 +130,9 @@ Bag
     }
     
     render() {
-        const { entries, addEntryModalShowing,addUserModalShowing,addInventoryModalShowing,classes,compactEntries } = this.props;
-        const { showCompact } = this.state;
+        const { entries, addEntryModalShowing,addUserModalShowing,addInventoryModalShowing,classes,isAuthenticated } = this.props;
         return (
             <div>
-                {this.state.showCompact &&
-                        <Button color="primary" variant="contained" onClick={() => this.setState({showCompact:false})}>
-                            Show Detailed 
-                        </Button>
-                    }
-                    {!this.state.showCompact &&
-                        <Button variant="contained" color="primary" className={classes.button}  onClick={() => this.setState({showCompact:true})}>
-                            Show Compact
-                        </Button>
-                    }
                 <div className={classes.AddEntryButton}>
                     <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddEntryModal}>
                         <AddCircleOutlineOutlinedIcon />
@@ -227,33 +152,21 @@ Add User
                     <Button color="primary" variant="contained" className={classes.button} onClick={this.openAddInventoryModal}>
                         Add Inventry
                     </Button>
-                    {!this.state.showEditOptions && showCompact === false &&
+                    {!this.state.showEditOptions &&
                         <Button color="primary" onClick={() => this.openEditConfirmDialog()}>
                             Show Edit 
                         </Button>
                     }
-                    {this.state.showEditOptions && showCompact === false &&
+                    {this.state.showEditOptions &&
                         <Button variant="outlined" className={classes.button} color="secondary" onClick={() => this.toggleEditOptions("hideEdit")}>
                             Hide Edit
                         </Button>
                     }
-                    
                 </div>
-                {showCompact === true ? <>
-                              <FilterForm
+                <FilterForm
                         users={this.props.users}
-                        filters={this.state.filters}
-                        setFilters={(values) => this.setState({filters:values})}
                         filterEntry={this.props._filterEntry}
                     />
-                <div>
-                    <MUIDataTable
-                        title={"Switch On Services Employee List"}
-                        data={compactEntries}
-                        columns={this.compactColumns}
-                        options={this.options}
-                    />
-                </div></>: <>
                 <div>
                     <MUIDataTable
                         title={"Switch On Services Employee List"}
@@ -262,8 +175,6 @@ Add User
                         options={this.options}
                     />
                 </div>
-                </>}
-
                 <DialogWrapper
                     title={"Authenticate"}
                     content={<AdminAuthentication verifyPassword={this.checkAdminPassword}/>}
@@ -283,7 +194,7 @@ Add User
                     onClose={this.closeAddEntryModal}
                     showResizeOptions={false}
                 >
-                    <EntryForm
+                    {/* <EntryForm
                         onCancel={this.closeAddEntryModal}
                         addEntry={this.props._addEntry}
                         users={this.props.users}
@@ -291,7 +202,7 @@ Add User
                         selectedEntry={this.props.selectedEntry}
                         entryMode={this.state.entryMode}
                         updateEntry={this.props._updateEntry}
-                    />
+                    /> */}
                 </ModalWrapper>
                 <ModalWrapper
                     title={"Add User"}

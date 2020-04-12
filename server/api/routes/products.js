@@ -55,22 +55,4 @@ router.delete(("/:productId"),(req, res, next) => {
     })
 });
 
-// router.get(("/:productId"),(req, res, next) => {
-//     const id = req.params.productId;
-//     Product.findById(id).exec().then(product => {
-//         console.log(product)
-//         res.status(200).json({product:product});
-//     }).catch(error => {console.log(error)})
-// });
-
-// router.patch(("/:productId"),(req, res, next) => {
-//     let message = "product edited"
-//     if(req.params.productId === "specific"){
-//         message = "specific product edited"
-//     }
-//     res.status(200).json({
-//         messaage:message
-//     });
-// });
-
 module.exports = router;
