@@ -347,7 +347,6 @@ router.put(("/"), async (req, res, next) => {
             prevBagValue = 0;
             prevBagValue = 0;
             stock.bag_value = prevBagValue
-            // stock.bag_value =  previousEntries.slice(-1)[0].remaining;
             const saveStock = await stock.save();
         }
 
@@ -464,7 +463,6 @@ router.delete(("/"), async (req, res, next) => {
         } else {
             prevBagValue = 0;
             stock.bag_value = prevBagValue
-            // stock.bag_value =  previousEntries.slice(-1)[0].remaining;
             const saveStock = await stock.save();
         }
 

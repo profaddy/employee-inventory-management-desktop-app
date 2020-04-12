@@ -323,7 +323,6 @@ Add User
                 </ModalWrapper>
                 <DeleteDialogWrapper
                     itemTobeDeleted={"entry"}
-                    // itemName={selectedRowIp}
                     onClose={this.hideDeleteDialog}
                     onSubmit={this.onDeleteEntry}
                     isOpen={this.state.showDeleteDialog}

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Tooltip from "@material-ui/core/Tooltip/Tooltip";
@@ -10,7 +9,6 @@ import { ReactComponent as MaximizeIcon } from "../../assets/fullscreen.svg";
 import { ReactComponent as MinimizeIcon} from "../../assets/fullscreenExit.svg";
 import { ReactComponent as FormattedPreview } from "../../assets/filePreview.svg";
 import { ReactComponent as RawFile} from "../../assets/rawFile.svg";
-// import { isReactClass } from "propValidator";
 
 class ModalWrapper extends Component {
     constructor(props) {
@@ -23,32 +21,6 @@ class ModalWrapper extends Component {
             minHeight: window.clientHeight
         };
     }
-    //   static propTypes = {
-    //       title: PropTypes.string,
-    //       onClose: PropTypes.func,
-    //       showCloseIcon: PropTypes.bool,
-    //       children: PropTypes.node,
-    //       bottomToolbar: PropTypes.node,
-    //       showBottomToolbar: PropTypes.bool,
-    //       fullHeight: PropTypes.bool,
-    //       CloseIcon: isReactClass,
-    //       minWidth: PropTypes.oneOfType([
-    //           PropTypes.number, PropTypes.string
-    //       ]),
-    //       minHeight: PropTypes.oneOfType([
-    //           PropTypes.number, PropTypes.string
-    //       ]),
-    //       classes: PropTypes.object,
-    //       isOpen: PropTypes.bool,
-    //       showResizeOptions:PropTypes.bool,
-    //       toggleWindowSize:PropTypes.func,
-    //       isMaximize:PropTypes.bool,
-    //       showDetailViewIcon:PropTypes.bool,
-    //       toggleDetailView:PropTypes.func,
-    //       isDetailView:PropTypes.bool,
-    //       maxWidth:PropTypes.number
-    //   };
-
   static defaultProps = {
       title: "",
       onClose: () => {},
