@@ -17,6 +17,7 @@
     "electron-is-dev": "1.1.0",
     "electron-log": "^3.0.8",
     "final-form": "^4.18.7",
+    "forever": "^2.0.0",
     "history": "^4.10.1",
     "moment": "^2.24.0",
     "mui-datatables": "^2.14.0",
