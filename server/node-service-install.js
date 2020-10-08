@@ -2,7 +2,7 @@ var Service = require('node-windows').Service;
  
 // Create a new service object
 var svc = new Service({
-  name:'inventory-node-server',
+  name:'inventory-node-server-1',
   description: 'This is inventory management node server',
   script: '.\\server.js',
   nodeOptions: [

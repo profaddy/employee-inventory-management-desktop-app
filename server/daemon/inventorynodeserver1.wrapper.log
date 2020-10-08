@@ -1,0 +1,320 @@
+2020-04-25 12:04:21 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-04-25 12:04:21 - Started 10740
+2020-04-25 12:05:35 - Stopping inventorynodeserver1.exe
+2020-04-25 12:05:35 - ProcessKill 10740
+2020-04-25 12:05:36 - Found child process: 1456 Name: conhost.exe
+2020-04-25 12:05:36 - Found child process: 17052 Name: node.exe
+2020-04-25 12:05:36 - Stopping process 1456
+2020-04-25 12:05:36 - Send SIGINT 1456
+2020-04-25 12:05:36 - SIGINT to 1456 failed - Killing as fallback
+2020-04-25 12:05:36 - Stopping process 17052
+2020-04-25 12:05:36 - Send SIGINT 17052
+2020-04-25 12:05:36 - SIGINT to 17052 failed - Killing as fallback
+2020-04-25 12:05:36 - Stopping process 10740
+2020-04-25 12:05:36 - Send SIGINT 10740
+2020-04-25 12:05:36 - SIGINT to 10740 failed - Killing as fallback
+2020-04-25 12:05:36 - Finished inventorynodeserver1.exe
+2020-04-25 12:06:06 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-04-25 12:06:06 - Started 16636
+2020-05-06 11:37:02 - Stopping inventorynodeserver1.exe
+2020-05-06 11:37:04 - ProcessKill 16636
+2020-05-06 11:37:23 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-05-06 11:39:06 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-05-06 11:39:09 - Started 7068
+2020-05-09 16:04:20 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-05-09 16:04:23 - Started 6260
+2020-05-14 09:30:46 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-05-14 09:30:49 - Started 6848
+2020-05-18 12:23:49 - Stopping inventorynodeserver1.exe
+2020-05-18 12:23:49 - ProcessKill 6848
+2020-05-18 12:23:59 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-05-27 16:44:32 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-05-27 16:44:33 - Started 8188
+2020-06-04 11:51:50 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-04 11:51:51 - Started 7952
+2020-06-05 16:50:02 - Stopping inventorynodeserver1.exe
+2020-06-05 16:50:02 - ProcessKill 7952
+2020-06-05 16:50:13 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-06-06 11:34:57 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-06 11:34:57 - Started 8112
+2020-06-11 02:24:06 - Stopping inventorynodeserver1.exe
+2020-06-11 02:24:06 - ProcessKill 8112
+2020-06-11 02:24:08 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-06-11 02:26:24 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-11 02:26:26 - Started 7572
+2020-06-20 00:20:17 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-20 00:20:20 - Started 7396
+2020-06-22 08:38:34 - Stopping inventorynodeserver1.exe
+2020-06-22 08:38:35 - ProcessKill 7396
+2020-06-22 08:38:59 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-06-22 08:40:36 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-22 08:40:38 - Started 7360
+2020-06-25 20:59:29 - Stopping inventorynodeserver1.exe
+2020-06-25 20:59:30 - ProcessKill 7360
+2020-06-25 20:59:33 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-06-26 14:30:46 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-06-26 14:30:47 - Started 6328
+2020-07-06 17:49:11 - Stopping inventorynodeserver1.exe
+2020-07-06 17:49:11 - ProcessKill 6328
+2020-07-06 17:50:02 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-07-06 17:51:26 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-07-06 17:51:26 - Started 5204
+2020-07-12 17:07:02 - Stopping inventorynodeserver1.exe
+2020-07-12 17:07:02 - ProcessKill 5204
+2020-07-12 17:07:45 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-07-12 17:09:15 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-07-12 17:09:15 - Started 5964
+2020-07-16 16:27:10 - Stopping inventorynodeserver1.exe
+2020-07-16 16:27:10 - ProcessKill 5964
+2020-07-16 16:27:15 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-07-16 16:29:39 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-07-16 16:29:39 - Started 7068
+2020-07-20 18:44:24 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-07-20 18:44:24 - Started 7192
+2020-07-29 20:09:40 - Stopping inventorynodeserver1.exe
+2020-07-29 20:09:40 - ProcessKill 7192
+2020-07-29 20:10:42 - Shutdown exception
+Message:The type initializer for 'System.Management.ManagementPath' threw an exception.
+Stacktrace:   at System.Management.ManagementScope._Clone(ManagementScope scope, IdentifierChangedEventHandler handler)
+   at System.Management.ManagementObjectSearcher..ctor(ManagementScope scope, ObjectQuery query, EnumerationOptions options)
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-07-29 20:12:42 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-07-29 20:12:42 - Started 7440
+2020-08-11 19:24:08 - Stopping inventorynodeserver1.exe
+2020-08-11 19:24:08 - ProcessKill 7440
+2020-08-11 19:24:54 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-08-11 19:26:36 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-08-11 19:26:37 - Started 7364
+2020-08-14 19:26:05 - Stopping inventorynodeserver1.exe
+2020-08-14 19:26:05 - ProcessKill 7364
+2020-08-14 19:26:10 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-08-15 15:17:42 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-08-15 15:17:45 - Started 2040
+2020-08-15 18:58:40 - Stopping inventorynodeserver1.exe
+2020-08-15 18:58:40 - ProcessKill 2040
+2020-08-15 19:00:15 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-08-15 19:02:02 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-08-15 19:02:02 - Started 6000
+2020-08-24 14:24:11 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-08-24 14:24:11 - Started 6048
+2020-08-29 11:31:43 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-08-29 11:31:55 - Started 6780
+2020-09-07 11:47:05 - Stopping inventorynodeserver1.exe
+2020-09-07 11:47:06 - ProcessKill 6780
+2020-09-07 11:48:24 - Shutdown exception
+Message:A system shutdown is in progress.
+
+Stacktrace:   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   at System.Management.ManagementScope.InitializeGuts(Object o)
+   at System.Management.ManagementScope.Initialize()
+   at System.Management.ManagementObjectSearcher.Initialize()
+   at System.Management.ManagementObjectSearcher.Get()
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-09-07 11:49:48 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-07 11:49:49 - Started 5964
+2020-09-14 16:45:48 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-14 16:45:48 - Started 1992
+2020-09-14 16:46:08 - Stopping inventorynodeserver1.exe
+2020-09-14 16:46:08 - ProcessKill 1992
+2020-09-14 16:46:36 - Shutdown exception
+Message:The type initializer for 'System.Management.ManagementPath' threw an exception.
+Stacktrace:   at System.Management.ManagementScope._Clone(ManagementScope scope, IdentifierChangedEventHandler handler)
+   at System.Management.ManagementObjectSearcher..ctor(ManagementScope scope, ObjectQuery query, EnumerationOptions options)
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-09-14 16:47:58 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-14 16:47:58 - Started 5596
+2020-09-16 12:25:09 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-16 12:25:10 - Started 6172
+2020-09-17 15:13:24 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-17 15:13:24 - Started 6108
+2020-09-19 18:25:26 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-19 18:25:26 - Started 6312
+2020-09-19 21:11:18 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-19 21:11:19 - Started 6112
+2020-09-20 17:47:45 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-20 17:47:45 - Started 4948
+2020-09-21 10:40:51 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-21 10:40:51 - Started 6076
+2020-09-21 11:54:51 - Stopping inventorynodeserver1.exe
+2020-09-21 11:54:52 - ProcessKill 6076
+2020-09-21 11:55:27 - Shutdown exception
+Message:The type initializer for 'System.Management.ManagementPath' threw an exception.
+Stacktrace:   at System.Management.ManagementScope._Clone(ManagementScope scope, IdentifierChangedEventHandler handler)
+   at System.Management.ManagementObjectSearcher..ctor(ManagementScope scope, ObjectQuery query, EnumerationOptions options)
+   at winsw.WrapperService.GetChildPids(Int32 pid)
+   at winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   at winsw.WrapperService.StopIt()
+   at winsw.WrapperService.OnShutdown()
+2020-09-23 11:56:36 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-23 11:56:39 - Started 6864
+2020-09-25 13:52:23 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-25 13:52:25 - Started 6336
+2020-09-26 11:03:27 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-26 11:03:31 - Started 6752
+2020-09-26 18:17:49 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-26 18:17:50 - Started 5308
+2020-09-27 11:52:28 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-27 11:52:28 - Started 6044
+2020-09-28 13:16:48 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-28 13:16:48 - Started 6072
+2020-09-29 11:34:32 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-29 11:34:33 - Started 6212
+2020-09-29 21:09:00 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-09-29 21:09:01 - Started 6032
+2020-10-01 10:48:15 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-01 10:48:18 - Started 6592
+2020-10-02 10:29:31 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-02 10:29:32 - Started 4880
+2020-10-03 10:17:55 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-03 10:17:56 - Started 5552
+2020-10-05 12:35:49 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-05 12:35:49 - Started 6284
+2020-10-05 16:52:37 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-05 16:52:38 - Started 5736
+2020-10-06 10:29:25 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-06 10:29:26 - Started 6272
+2020-10-07 11:06:49 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-07 11:06:49 - Started 6340
+2020-10-08 08:09:14 - Starting C:\Program Files\nodejs\node.exe  --harmony --max_old_space_size=4096 D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js --file D:\inventory-adnan\employee-inventory-management-desktop-app\server\server.js --scriptoptions= --log "inventory-node-server-1 wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2020-10-08 08:09:14 - Started 6312

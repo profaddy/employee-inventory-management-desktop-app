@@ -1,0 +1,308 @@
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+Error: Not found
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:38:17
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\app.js:30:3
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:317:13)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\router\index.js:284:7
+(node:3172) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:3172) UnhandledPromiseRejectionWarning: MongoError: Invalid Operation, no operations specified
+    at Function.create (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\core\error.js:43:12)
+    at toError (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\utils.js:149:22)
+    at UnorderedBulkOperation.bulkExecute (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\bulk\common.js:1065:31)
+    at UnorderedBulkOperation.execute (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\bulk\common.js:1094:22)
+    at BulkWriteOperation.execute (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\operations\bulk_write.js:67:10)
+    at InsertManyOperation.execute (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\operations\insert_many.js:41:24)
+    at executeOperation (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\operations\execute_operation.js:77:17)
+    at Collection.insertMany (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\collection.js:546:10)
+    at Collection.<anonymous> (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongodb\lib\collection.js:698:15)
+    at Collection.deprecated [as insert] (internal/util.js:89:15)
+    at NativeCollection.<computed> [as insert] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:171:28)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\users.js:39:47
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:3172) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:3172) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:8116) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:8116) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:8116) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:8116) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:8116) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:6280) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:168) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:168) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:168) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:168) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:7892) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:1728) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:1728) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:1728) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1728) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+(node:6844) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:6844) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:6844) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:6844) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:7636) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:6896) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:6896) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:771:10)
+    at ServerResponse.send (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:170:12)
+    at ServerResponse.json (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\express\lib\response.js:267:15)
+    at D:\inventory-adnan\employee-inventory-management-desktop-app\server\api\routes\entries.js:302:25
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:6896) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:6896) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+internal/child_process.js:407
+    throw errnoException(err, 'spawn');
+    ^
+
+Error: spawn EROFS
+    at ChildProcess.spawn (internal/child_process.js:407:11)
+    at spawn (child_process.js:548:9)
+    at Object.execFile (child_process.js:232:17)
+    at exec (child_process.js:153:25)
+    at write (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\eventlog.js:67:3)
+    at logger.value [as warn] (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\eventlog.js:185:9)
+    at launch (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js:143:18)
+    at process.<anonymous> (D:\inventory-adnan\employee-inventory-management-desktop-app\server\node_modules\node-windows\lib\wrapper.js:201:5)
+    at process.emit (events.js:311:20)
+    at process._fatalException (internal/process/execution.js:164:25) {
+  errno: 'EROFS',
+  code: 'EROFS',
+  syscall: 'spawn'
+}
+(node:7440) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:8088) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
+(node:7944) DeprecationWarning: collection.insert is deprecated. Use insertOne, insertMany or bulkWrite instead.
